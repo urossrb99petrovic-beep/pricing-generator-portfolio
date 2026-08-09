@@ -1,0 +1,1 @@
+"""Pricing Generator application package."""

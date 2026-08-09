@@ -1,0 +1,33 @@
+{
+  "configuration_version": "1.0.0",
+  "products": [
+    {
+      "product_id": "SMS",
+      "display_name": "SMS",
+      "output_name": "SMS",
+      "display_order": 1,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "SMS",
+      "local_worksheet": null,
+      "supported_pricing_types": ["Baseline", "Enterprise"],
+      "features": {"sender_overrides": true, "local_countries": false},
+      "sender_options": {"enabled": true, "supported_countries": ["US", "CA"]},
+      "local_options": {"enabled": false, "require_at_least_one_country": false}
+    },
+    {
+      "product_id": "LOCAL_SMS",
+      "display_name": "Local SMS",
+      "output_name": "Local SMS",
+      "display_order": 2,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "SMS",
+      "local_worksheet": "Local SMS",
+      "supported_pricing_types": ["Baseline", "Enterprise"],
+      "features": {"sender_overrides": true, "local_countries": true},
+      "sender_options": {"enabled": true, "supported_countries": ["US", "CA"]},
+      "local_options": {"enabled": true, "require_at_least_one_country": false}
+    }
+  ]
+}

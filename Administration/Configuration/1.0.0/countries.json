@@ -1,0 +1,27 @@
+{
+  "configuration_version": "1.0.0",
+  "country_name_corrections": {},
+  "sender_overrides": {
+    "worksheet": "2-way SMS",
+    "countries": {
+      "US": {
+        "country_name": "United States",
+        "iso2": "US",
+        "default_sender_id": "DSC",
+        "sender_ids": {
+          "DSC": {"display_name": "Default sender", "apply_override": false, "worksheet_lookup_value": null},
+          "TOLL_FREE": {"display_name": "Toll Free", "apply_override": true, "worksheet_lookup_value": "United States - Toll Free"}
+        }
+      },
+      "CA": {
+        "country_name": "Canada",
+        "iso2": "CA",
+        "default_sender_id": "DSC",
+        "sender_ids": {
+          "DSC": {"display_name": "Default sender", "apply_override": false, "worksheet_lookup_value": null},
+          "TOLL_FREE": {"display_name": "Toll Free", "apply_override": true, "worksheet_lookup_value": "Canada - Toll Free"}
+        }
+      }
+    }
+  }
+}
