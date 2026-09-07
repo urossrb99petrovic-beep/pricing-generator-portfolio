@@ -119,7 +119,7 @@ class HomeFrame(ctk.CTkFrame):
 
         step_label = ctk.CTkLabel(
             master=self,
-            text="Step 1 of 2",
+            text="Synthetic demo • 14 products • 6 countries | Step 1 of 2",
             font=ctk.CTkFont(
                 size=14
             )

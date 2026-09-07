@@ -1,0 +1,10 @@
+Band1,Band2,Band3,Band4,Band5,Band6
+0,,,,,
+Country,ISO2,Band1:Landline,Band2:Landline,Band3:Landline,Band4:Landline,Band5:Landline,Band6:Landline,Band1:Mobile,Band2:Mobile,Band3:Mobile,Band4:Mobile,Band5:Mobile,Band6:Mobile
+,,0.055,,,,,,0.053,,,,,
+United States,US,0.059,,,,,,0.057,,,,,
+Canada,CA,0.063,,,,,,0.061,,,,,
+United Kingdom,GB,0.067,,,,,,0.065,,,,,
+Germany,DE,0.071,,,,,,0.069,,,,,
+Brazil,BR,0.075,,,,,,0.073,,,,,
+Serbia,RS,0.079,,,,,,0.077,,,,,

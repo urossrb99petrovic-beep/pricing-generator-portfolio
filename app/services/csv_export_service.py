@@ -329,6 +329,14 @@ class CsvExportService:
     ) -> str:
         """
         Renders and sanitizes the configured filename.
+
+        Products with a Pricing Type produce filenames such as:
+
+            USD - SMS - Baseline - template Aug 2026.csv
+
+        Products without a Pricing Type produce filenames such as:
+
+            USD - Phone ID Standard - template Aug 2026.csv
         """
 
         filename_pattern = str(
@@ -343,24 +351,83 @@ class CsvExportService:
                 "Output filename pattern cannot be empty."
             )
 
-        rendered_filename = filename_pattern
+        # ==================================================
+        # OPTIONAL PRICING TYPE
+        # ==================================================
+
+        normalized_pricing_type = (
+            str(
+                generation_result.pricing_type
+            ).strip()
+            if generation_result.pricing_type
+            is not None
+            else ""
+        )
+
+        rendered_filename = (
+            filename_pattern
+        )
+
+        # ==================================================
+        # REMOVE PRICING TYPE SEGMENT WHEN NOT USED
+        #
+        # Config pattern:
+        #
+        #     {currency} - {product} - {pricing_type}
+        #     - template {MMM YYYY}.csv
+        #
+        # Phone ID:
+        #
+        #     {currency} - {product}
+        #     - template {MMM YYYY}.csv
+        # ==================================================
+
+        if not normalized_pricing_type:
+
+            rendered_filename = (
+                re.sub(
+                    r"\s*-\s*\{pricing_type\}",
+                    "",
+                    rendered_filename
+                )
+            )
+
+            # Defensive fallback if a future pattern uses the
+            # placeholder without a preceding hyphen.
+            rendered_filename = (
+                rendered_filename.replace(
+                    "{pricing_type}",
+                    ""
+                )
+            )
+
+        # ==================================================
+        # PLACEHOLDER REPLACEMENTS
+        # ==================================================
 
         replacements = {
-            "{currency}": generation_result.currency,
+            "{currency}": (
+                generation_result.currency
+            ),
             "{product}": (
-                generation_result.product_output_name
+                generation_result
+                .product_output_name
             ),
             "{pricing_type}": (
-                generation_result.pricing_type
+                normalized_pricing_type
             ),
             "{MMM YYYY}": (
-                generation_date.strftime("%b %Y")
+                generation_date.strftime(
+                    "%b %Y"
+                )
             )
         }
 
-        for placeholder, replacement_value in (
-            replacements.items()
-        ):
+        for (
+            placeholder,
+            replacement_value
+        ) in replacements.items():
+
             rendered_filename = (
                 rendered_filename.replace(
                     placeholder,
@@ -368,9 +435,28 @@ class CsvExportService:
                 )
             )
 
-        unresolved_placeholders = re.findall(
-            r"\{[^{}]+\}",
-            rendered_filename
+        # ==================================================
+        # CLEAN UP OPTIONAL-SPACING ARTIFACTS
+        # ==================================================
+
+        rendered_filename = (
+            re.sub(
+                r"\s{2,}",
+                " ",
+                rendered_filename
+            )
+            .strip()
+        )
+
+        # ==================================================
+        # UNKNOWN PLACEHOLDERS
+        # ==================================================
+
+        unresolved_placeholders = (
+            re.findall(
+                r"\{[^{}]+\}",
+                rendered_filename
+            )
         )
 
         if unresolved_placeholders:
@@ -384,8 +470,13 @@ class CsvExportService:
 
             raise ValueError(
                 f"Unsupported output filename "
-                f"placeholder(s): {unresolved_list}."
+                f"placeholder(s): "
+                f"{unresolved_list}."
             )
+
+        # ==================================================
+        # WINDOWS-SAFE FILENAME
+        # ==================================================
 
         safe_filename = (
             self.INVALID_FILENAME_CHARACTERS.sub(
@@ -399,7 +490,7 @@ class CsvExportService:
                 "Rendered output filename cannot be empty."
             )
 
-        if not safe_filename.lower().endswith(
+        if not safe_filename.casefold().endswith(
             ".csv"
         ):
             safe_filename = (

@@ -70,7 +70,7 @@ class LoggingService:
         *,
         currency: str,
         product: str,
-        pricing_type: str,
+        pricing_type: str | None,
         sender_ids: dict[str, str],
         local_countries: list[str],
         rows_generated: int,
@@ -78,6 +78,9 @@ class LoggingService:
     ) -> Path | None:
         """
         Writes a successful generation log.
+
+        Products that do not use Pricing Type are logged with
+        an empty pricing_type value instead of None.
 
         Returns:
             Path to the created log file, or None when
@@ -91,6 +94,18 @@ class LoggingService:
 
         timestamp = datetime.now()
 
+        # Products such as Phone ID Suite and Phone ID Live
+        # Status do not use Baseline / Enterprise.
+        #
+        # Store an empty value in the log rather than:
+        #
+        #     "pricing_type": null
+        pricing_type_value = (
+            pricing_type
+            if pricing_type is not None
+            else ""
+        )
+
         log_data = {
             "timestamp": timestamp.isoformat(
                 timespec="seconds"
@@ -102,7 +117,7 @@ class LoggingService:
             ),
             "currency": currency,
             "product": product,
-            "pricing_type": pricing_type,
+            "pricing_type": pricing_type_value,
             "sender_ids": sender_ids.copy(),
             "local_countries": local_countries.copy(),
             "rows_generated": rows_generated,
@@ -122,13 +137,16 @@ class LoggingService:
         *,
         currency: str,
         product: str,
-        pricing_type: str,
+        pricing_type: str | None,
         sender_ids: dict[str, str],
         local_countries: list[str],
         error: Exception
     ) -> Path | None:
         """
         Writes a failed generation log.
+
+        Products that do not use Pricing Type are logged with
+        an empty pricing_type value instead of None.
 
         Returns:
             Path to the created log file, or None when
@@ -142,6 +160,14 @@ class LoggingService:
 
         timestamp = datetime.now()
 
+        # Products such as Phone ID Suite and Phone ID Live
+        # Status do not use Baseline / Enterprise.
+        pricing_type_value = (
+            pricing_type
+            if pricing_type is not None
+            else ""
+        )
+
         log_data = {
             "timestamp": timestamp.isoformat(
                 timespec="seconds"
@@ -153,7 +179,7 @@ class LoggingService:
             ),
             "currency": currency,
             "product": product,
-            "pricing_type": pricing_type,
+            "pricing_type": pricing_type_value,
             "sender_ids": sender_ids.copy(),
             "local_countries": local_countries.copy(),
             "error_type": type(error).__name__,

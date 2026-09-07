@@ -1,0 +1,621 @@
+{
+  "configuration_version": "1.3.1",
+  "products": [
+    {
+      "product_id": "SMS",
+      "display_name": "SMS",
+      "output_name": "SMS",
+      "display_order": 1,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "SMS",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": true,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": true,
+        "supported_countries": [
+          "US",
+          "CA"
+        ]
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      }
+    },
+    {
+      "product_id": "PREMIUM_SMS",
+      "display_name": "Premium SMS",
+      "output_name": "Premium SMS",
+      "display_order": 2,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "Premium SMS",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": true,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": true,
+        "supported_countries": [
+          "US",
+          "CA"
+        ]
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      }
+    },
+    {
+      "product_id": "LOCAL_SMS",
+      "display_name": "Local SMS",
+      "output_name": "Local SMS",
+      "display_order": 3,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "SMS",
+      "local_worksheet": "Local SMS",
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": true,
+        "local_countries": true
+      },
+      "sender_options": {
+        "enabled": true,
+        "supported_countries": [
+          "US",
+          "CA"
+        ]
+      },
+      "local_options": {
+        "enabled": true,
+        "require_at_least_one_country": false
+      }
+    },
+    {
+      "product_id": "LOCAL_PREMIUM_SMS",
+      "display_name": "Local Premium SMS",
+      "output_name": "Local Premium SMS",
+      "display_order": 4,
+      "enabled": true,
+      "requires_options": true,
+      "base_worksheet": "Premium SMS",
+      "local_worksheet": "Local Premium SMS",
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": true,
+        "local_countries": true
+      },
+      "sender_options": {
+        "enabled": true,
+        "supported_countries": [
+          "US",
+          "CA"
+        ]
+      },
+      "local_options": {
+        "enabled": true,
+        "require_at_least_one_country": false
+      }
+    },
+    {
+      "product_id": "SMS_MARKETING",
+      "display_name": "SMS Marketing",
+      "output_name": "SMS Marketing",
+      "display_order": 5,
+      "enabled": true,
+      "requires_options": false,
+      "base_worksheet": "SMS MKT",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      }
+    },
+    {
+      "product_id": "VOICE_VERIFY",
+      "display_name": "Voice Verify",
+      "output_name": "Voice Verify",
+      "display_order": 6,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "VOICE",
+      "base_worksheet": null,
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false,
+        "voice_options": true
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": [
+        {
+          "option_id": "billing_type",
+          "display_name": "Billing",
+          "required": true,
+          "values": [
+            {
+              "value_id": "PER_TRANSACTION",
+              "display_name": "Per Transaction",
+              "worksheet": "Voice Verify Per Transaction"
+            },
+            {
+              "value_id": "PER_MINUTE",
+              "display_name": "Per Minute",
+              "worksheet": "Voice Verify Per Minute"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "VOICE",
+      "display_name": "Voice",
+      "output_name": "Voice",
+      "display_order": 7,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "VOICE",
+      "base_worksheet": "Voice API (1-way and 2-way)",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false,
+        "voice_options": true
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": [
+        {
+          "option_id": "traffic_type",
+          "display_name": "Traffic",
+          "required": true,
+          "values": [
+            {
+              "value_id": "ONE_WAY",
+              "display_name": "1-Way"
+            },
+            {
+              "value_id": "TWO_WAY",
+              "display_name": "2-Way"
+            }
+          ]
+        },
+        {
+          "option_id": "number_type",
+          "display_name": "Number Type",
+          "required": true,
+          "values": [
+            {
+              "value_id": "US_CLOUD_NUMBERS",
+              "display_name": "US Cloud Numbers",
+              "worksheet_value": "US Cloud numbers"
+            },
+            {
+              "value_id": "GLOBAL_MOBILE_NUMBERS",
+              "display_name": "Global Mobile Numbers",
+              "worksheet_value": "Global Mobile Numbers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "VOICE_VERIFY_TTS",
+      "display_name": "Voice Verify + TTS",
+      "output_name": "Voice Verify + TTS",
+      "display_order": 8,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "VOICE",
+      "base_worksheet": "Voice Verify + TTS",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false,
+        "voice_options": true
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": [
+        {
+          "option_id": "traffic_type",
+          "display_name": "Traffic",
+          "required": true,
+          "values": [
+            {
+              "value_id": "ONE_WAY",
+              "display_name": "1-Way"
+            },
+            {
+              "value_id": "TWO_WAY",
+              "display_name": "2-Way"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "MOBILE_SMS_VOICE",
+      "display_name": "Mobile (SMS and Voice)",
+      "output_name": "Mobile (SMS and Voice)",
+      "display_order": 9,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "MOBILE",
+      "base_worksheet": "Mobile (SMS and Voice Enabled)",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false,
+        "voice_options": true,
+        "multiple_outputs": true
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": [
+        {
+          "option_id": "traffic_type",
+          "display_name": "Traffic",
+          "required": true,
+          "values": [
+            {
+              "value_id": "ONE_WAY",
+              "display_name": "1-Way"
+            },
+            {
+              "value_id": "TWO_WAY",
+              "display_name": "2-Way"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "TOLL_FREE_VOICE",
+      "display_name": "Toll-Free Voice",
+      "output_name": "Toll-Free Voice",
+      "display_order": 10,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "VOICE",
+      "base_worksheet": "Toll-Free (Voice Enabled)",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false,
+        "voice_options": true
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": []
+    },
+    {
+      "product_id": "WHATSAPP",
+      "display_name": "WhatsApp",
+      "output_name": "WhatsApp",
+      "display_order": 11,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "OMNICHANNEL",
+      "source_workbook": "Synthetic WhatsApp.xlsx",
+      "base_worksheet": "WhatsApp Telesign",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": []
+    },
+    {
+      "product_id": "VIBER",
+      "display_name": "Viber",
+      "output_name": "Viber",
+      "display_order": 12,
+      "enabled": true,
+      "requires_options": true,
+      "product_family": "OMNICHANNEL",
+      "source_workbook": "Synthetic Viber.xlsx",
+      "base_worksheet": "Viber Regular Companies",
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": []
+    },
+    {
+      "product_id": "RCS",
+      "display_name": "RCS",
+      "output_name": "RCS",
+      "display_order": 13,
+      "enabled": false,
+      "requires_options": true,
+      "product_family": "OMNICHANNEL",
+      "source_workbook": "Synthetic RCS.xlsx",
+      "base_worksheet": null,
+      "local_worksheet": null,
+      "supported_pricing_types": [
+        "Baseline",
+        "Enterprise"
+      ],
+      "features": {
+        "sender_overrides": false,
+        "local_countries": false
+      },
+      "sender_options": {
+        "enabled": false,
+        "supported_countries": []
+      },
+      "local_options": {
+        "enabled": false,
+        "require_at_least_one_country": false
+      },
+      "choice_options": []
+    },
+    {
+      "product_id": "PHONE_ID_SUITE",
+      "display_name": "Phone ID Suite",
+      "output_name": "Phone ID Suite",
+      "product_family": "PHONE_ID",
+      "enabled": true,
+      "display_order": 14,
+      "source_workbook": "Synthetic Phone ID.xlsx",
+      "base_worksheet": "Single pricing",
+      "supported_pricing_types": [],
+      "sender_options": {
+        "enabled": false
+      },
+      "local_options": {
+        "enabled": false
+      },
+      "choice_options": [],
+      "subproducts": [
+        {
+          "product_id": "PHONE_ID_STANDARD",
+          "display_name": "Phone ID Standard",
+          "output_name": "Phone ID Standard",
+          "pricing_field": "phone_id_standard",
+          "display_order": 1,
+          "required": true,
+          "default_selected": true,
+          "user_selectable": false
+        },
+        {
+          "product_id": "PHONE_ID_CONTACT",
+          "display_name": "Phone ID Contact",
+          "output_name": "Phone ID Contact",
+          "pricing_field": "phone_id_contact",
+          "display_order": 2,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_CONTACT_MATCH",
+          "display_name": "Phone ID Contact Match",
+          "output_name": "Phone ID Contact Match",
+          "pricing_field": "phone_id_contact_match",
+          "display_order": 3,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_NUMBER_DEACTIVATION",
+          "display_name": "Phone ID Number Deactivation",
+          "output_name": "Phone ID Number Deactivation",
+          "pricing_field": "phone_id_number_deactivation",
+          "display_order": 4,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_PORTING_HISTORY",
+          "display_name": "Phone ID Porting History",
+          "output_name": "Phone ID Porting History",
+          "pricing_field": "phone_id_porting_history",
+          "display_order": 5,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_PORTING_STATUS",
+          "display_name": "Phone ID Porting Status",
+          "output_name": "Phone ID Porting Status",
+          "pricing_field": "phone_id_porting_status",
+          "display_order": 6,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_SIM_SWAP",
+          "display_name": "Phone ID SIM Swap",
+          "output_name": "Phone ID SIM Swap",
+          "pricing_field": "phone_id_sim_swap",
+          "display_order": 7,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_SUBSCRIBER_STATUS",
+          "display_name": "Phone ID Subscriber Status",
+          "output_name": "Phone ID Subscriber Status",
+          "pricing_field": "phone_id_subscriber_status",
+          "display_order": 8,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_CFD",
+          "display_name": "Phone ID CFD",
+          "output_name": "Phone ID CFD",
+          "pricing_field": "phone_id_cfd",
+          "display_order": 9,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_AGE_VERIFY",
+          "display_name": "Phone ID Age Verify",
+          "output_name": "Phone ID Age Verify",
+          "pricing_field": "phone_id_age_verify",
+          "display_order": 10,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_BREACHED_DATA",
+          "display_name": "Phone ID Breached Data",
+          "output_name": "Phone ID Breached Data",
+          "pricing_field": "phone_id_breached_data",
+          "display_order": 11,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        },
+        {
+          "product_id": "PHONE_ID_ACTIVE_CALL_STATUS",
+          "display_name": "Phone ID Active Call Status",
+          "output_name": "Phone ID Active Call Status",
+          "pricing_field": "phone_id_active_call_status",
+          "display_order": 12,
+          "required": false,
+          "default_selected": false,
+          "user_selectable": true
+        }
+      ]
+    },
+    {
+      "product_id": "PHONE_ID_LIVE_STATUS",
+      "display_name": "Phone ID Live Status",
+      "output_name": "Phone ID Live Status",
+      "product_family": "PHONE_ID",
+      "enabled": true,
+      "display_order": 15,
+      "source_workbook": "Synthetic Phone ID.xlsx",
+      "base_worksheet": "Phone ID Live Status",
+      "supported_pricing_types": [],
+      "sender_options": {
+        "enabled": false
+      },
+      "local_options": {
+        "enabled": false
+      },
+      "choice_options": []
+    }
+  ]
+}

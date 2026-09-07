@@ -1,0 +1,60 @@
+{
+  "configuration_version": "1.3.1",
+
+  "country_name_corrections": {
+    "Laos": "Lao",
+    "Bonaire, Sabo & St. Eustacius": "Bonaire Sabo & St. Eustacius"
+  },
+
+  "sender_overrides": {
+    "worksheet": "2-way SMS",
+
+    "countries": {
+      "US": {
+        "country_name": "United States",
+        "iso2": "US",
+        "default_sender_id": "DSC",
+
+        "sender_ids": {
+          "DSC": {
+            "display_name": "DSC",
+            "apply_override": false,
+            "worksheet_lookup_value": null
+          },
+
+          "TOLL_FREE": {
+            "display_name": "Toll Free",
+            "apply_override": true,
+            "worksheet_lookup_value": "United States - Toll Free"
+          },
+
+          "10DLC": {
+            "display_name": "10DLC",
+            "apply_override": true,
+            "worksheet_lookup_value": "United States - 10DLC"
+          }
+        }
+      },
+
+      "CA": {
+        "country_name": "Canada",
+        "iso2": "CA",
+        "default_sender_id": "DSC",
+
+        "sender_ids": {
+          "DSC": {
+            "display_name": "DSC",
+            "apply_override": false,
+            "worksheet_lookup_value": null
+          },
+
+          "TOLL_FREE": {
+            "display_name": "Toll Free",
+            "apply_override": true,
+            "worksheet_lookup_value": "Canada - Toll Free"
+          }
+        }
+      }
+    }
+  }
+}

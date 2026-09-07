@@ -1,146 +1,99 @@
 # Pricing Generator
 
-A configuration-driven Python desktop application that transforms structured Excel pricing into validated, upload-ready CSV files.
+**A Python desktop application that turns controlled Excel pricing into validated CSV templates.**
 
-![Pricing Generator selection screen](docs/screenshots/01-select-currency-and-product.png)
+Portfolio edition based on the original **v1.3.1** application. Includes **14 products, 3 currencies, 6 demonstration countries**, and a reproducible workbook-to-export test suite. All bundled prices are fictional.
 
-## Business problem
+## Why I built it
 
-Preparing one pricing upload manually took a team member at least five minutes. The person also needed to know where approved prices were stored, which pricing type to use, how market-specific rules worked, and the exact structure required by the upload template. Manual copying and formatting created a risk of uploading incorrect client pricing.
+Business teams needed upload-ready pricing files but did not necessarily know how the source workbooks, product rules, or destination templates worked. Manual preparation took at least five minutes per file and created opportunities for copying the wrong price or choosing an incorrect template.
 
-I built the Pricing Generator to convert that specialist workflow into a guided desktop application. A user selects a currency, product, and relevant options; the application validates the request and source workbook, applies the configured rules, and generates the required CSV plus an audit record.
+I built a guided desktop workflow that selects the correct workbook, applies the product-specific rules, validates the data, and creates the required file or group of files. The original business workflow benefited from less manual preparation and less reliance on specialist template knowledge. The five-minute figure is a user-reported manual preparation baseline; this repository does not claim a measured error-reduction percentage or a benchmarked time saving.
 
-## Impact
+## Try it
 
-- Saves at least five minutes for every generated file.
-- Enables users without specialist pricing or template knowledge to create upload-ready files.
-- Replaces manual price copying and template formatting with a consistent process.
-- Reduces the risk of incorrect client pricing uploads through schema checks, deterministic rules, and validation before export.
-- Supports USD, EUR, and BRL from one application.
+On Windows with Python 3.11 or 3.12 installed:
 
-No error-reduction percentage is claimed because errors were not formally measured before and after implementation.
+1. Download and extract the repository.
+2. Double-click **Setup_Windows.bat** once to install dependencies and run the tests.
+3. Double-click **Run_Windows.bat** to open the desktop app.
+4. Select a currency and product, configure its options, and generate.
 
-## Portfolio demo
+Outputs are saved under `demo_output`; audit logs under `demo_logs`. After success, the app clears the selections and returns home so you can generate another product.
 
-This public repository contains the application source and fictional demonstration data. All prices in `demo_data/` are synthetic and do not represent commercial pricing. Real workbooks, production outputs, logs, usernames, local paths, and the deployed executable are excluded.
+For a full demonstration without opening the desktop UI, double-click **Demo_All_Products.bat**. It exercises 306 scenarios and creates 357 CSVs in separate scenario folders, with a JSON manifest explaining each request.
 
-The demo exposes two products and the main engineering patterns used by the deployed workflow:
-
-- Baseline and Enterprise pricing
-- optional US and Canadian sender-specific overrides
-- optional local-country pricing
-- USD, EUR, and BRL workbook selection
-- validated CSV export and audit logging
-
-## Application workflow
-
-```mermaid
-flowchart TD
-    A["User selections"] --> B["Request validation"]
-    B --> C["Workbook and schema checks"]
-    C --> D["Pricing extraction"]
-    D --> E["Ordered business rules"]
-    E --> F["CSV export"]
-    F --> G["Audit log"]
-    B --> H["Clear failure; no partial output"]
-    C --> H
-    D --> H
-```
-
-![Pricing Generator options screen](docs/screenshots/02-configure-generation-options.png)
-
-## Technical design
-
-| Layer | Responsibility |
-|---|---|
-| UI | Collect selections and display validation/results |
-| Controller | Validate and coordinate a generation request |
-| Application services | Load pricing data and assemble product output |
-| Domain engine | Apply base, sender, and local-price rules in order |
-| Infrastructure | Read Excel, write CSV, resolve paths, and create logs |
-| Models | Carry typed request, pricing, and result data |
-
-Key design decisions:
-
-- External JSON files define products, currencies, countries, workbook schemas, output behavior, and logging.
-- Prices use `Decimal` in the domain and export layers.
-- Workbook headers and required fields are checked before processing.
-- Business rules are isolated from the GUI and Excel-reading code, allowing in-memory unit tests.
-- A failed validation does not create a partial upload file.
-- Audit-log failure does not hide the original application result.
-
-More detail is available in [the architecture notes](docs/architecture.md).
-
-## Technology
-
-- Python 3.11+
-- pandas
-- openpyxl for the public `.xlsx` demo
-- python-calamine for `.xlsb` support
-- CustomTkinter
-- `Decimal`, dataclasses, JSON, CSV, and unittest
-- PyInstaller in the deployed Windows version
-
-## Run the demo
-
-```bash
-git clone https://github.com/urossrb99petrovic-beep/pricing-generator.git
-cd pricing-generator
-python -m venv .venv
-```
-
-Activate the environment:
+Command-line setup:
 
 ```powershell
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+.venv\Scripts\python.exe main.py
 ```
 
-```bash
-# macOS or Linux
-source .venv/bin/activate
-```
+On macOS/Linux use `.venv/bin/python` in place of `.venv\Scripts\python.exe`. The desktop interface requires a graphical session and Tk. The headless demonstration runs with `python demo.py` after dependencies are installed.
 
-Install and start:
+## Product coverage
 
-```bash
-python -m pip install -r requirements.txt
-python main.py
-```
+| Product | Features demonstrated |
+| --- | --- |
+| SMS | Baseline/Enterprise; US DSC, Toll Free and 10DLC; Canada DSC and Toll Free |
+| Premium SMS | Separate premium source prices; the same sender options |
+| Local SMS | Selected local destinations replace standard prices after sender overrides |
+| Local Premium SMS | Local premium overrides with standard premium pricing elsewhere |
+| SMS Marketing | Independent marketing prices; no sender or local options |
+| Voice Verify | Per Transaction or Per Minute; separate mobile and landline prices |
+| Voice | 1-Way/2-Way; US Cloud Numbers/Global Mobile Numbers |
+| Voice Verify + TTS | 1-Way/2-Way; inbound handling and fallback behavior |
+| Toll-Free Voice | Inbound and outbound mobile/landline prices |
+| Mobile (SMS and Voice) | Two files for 1-Way, three for 2-Way; independent availability filtering |
+| WhatsApp | Universal fee from the dynamically located Other row |
+| Viber | Cost and selected margin produce four message-category prices |
+| Phone ID Suite | Required Standard plus 11 optional subproducts, separate CSVs and availability filtering |
+| Phone ID Live Status | Single-price mobile/landline output without a pricing-tier selection |
 
-Generated files are written to `demo_output/`; audit files are written to `demo_logs/`. Both folders are ignored by Git.
+The supplied v1.3.1 catalog calls the toll-free product **Toll-Free Voice** and the live product **Phone ID Live Status**. RCS remains disabled, as in the source release.
 
-## Run the tests
+**Countries:** United States, Canada, United Kingdom, Germany, Brazil and Serbia. Local pricing is demonstrated for US, Brazil and Serbia. Country coverage is deliberately small; availability flags are fictional demonstrations, not commercial availability statements. WhatsApp deliberately exports only its universal fee row.
 
-```bash
-python -m unittest discover -s tests -v
-```
+See the [feature walkthrough](docs/DEMO_WALKTHROUGH.md), [sample exports](examples/README.md), and [architecture](docs/ARCHITECTURE.md).
 
-The test suite covers configuration loading, fictional workbook extraction, base-price selection, sender override behavior, and explicit failure for unsupported pricing types.
+## What this project demonstrates
 
-## Repository structure
+- Excel ingestion with strict schemas, grouped headers and currency-specific header aliases.
+- Separate GUI, controller, extraction, rule engine, export and logging layers.
+- Decimal arithmetic, deterministic override order and product-specific CSV layouts.
+- Multi-file generation and filtering of unavailable data without fabricating prices.
+- A reusable synthetic dataset, headless demonstration and automatic test workflow.
 
-```text
-app/                         application source
-Administration/Configuration/1.0.0/
-                             fictional public configuration
-demo_data/                   fictional USD, EUR, and BRL workbooks
-docs/                        architecture and screenshots
-tests/                       unit and demo-integration tests
-main.py                      application entry point
-requirements.txt             Python dependencies
-```
+This is a software and data-automation project. It does not perform price optimization, elasticity modelling or machine learning.
 
-## My role
+## Verification
 
-I translated the operational workflow and pricing rules into the application design, implemented the Python modules and validation paths, and iterated on edge cases through testing. I am prepared to explain the architecture, rule precedence, validation strategy, and trade-offs in an interview.
+The portfolio suite contains 141 tests, including the full 306-scenario integration matrix. Tests cover real synthetic workbook reads, CSV creation, sender/local precedence, output counts, unavailable products, invalid selections, and the v1.3.1 reset behavior. Twenty-five self-contained original test modules are retained; production-workbook-dependent tests are replaced by bundled-fixture integration tests.
 
-## What I would improve next
+GitHub Actions is configured for Windows and Linux on Python 3.11 and 3.12. Local verification was performed on Linux/Python 3.12. Windows UI interaction, Excel COM fallback and the remote Actions matrix must be verified in their target environments; no packaged Windows executable is included.
 
-- Add structured telemetry for generation volume, duration, validation failures, and estimated time saved.
-- Replace desktop distribution with an authenticated internal web application if the user base grows.
-- Expand regression tests around simultaneous local and sender overrides.
+## Scope and operating limits
 
-## License
+- Demo prices are illustrative independent values for USD/EUR/BRL, not exchange-rate conversions.
+- CSVs demonstrate the source template formats. They must not be uploaded to client accounts.
+- Existing output names may be overwritten. The showcase isolates each scenario to preserve its outputs.
+- Logging is best effort: a log-write failure does not invalidate an otherwise successful export.
+- Multi-file exports are not a filesystem transaction. A disk/permission failure during writing can leave files from earlier in that batch.
+- The original Windows Excel fallback is retained and requires Excel plus `pywin32` when used. Bundled workbook reads do not require Excel.
 
-The portfolio demo is available under the [MIT License](LICENSE). The fictional prices are provided only to demonstrate application behavior.
+## Repository guide
+
+| Location | Purpose |
+| --- | --- |
+| `app/` | Application layers from v1.3.1 |
+| `Administration/Configuration/1.3.1/` | Product catalog, workbook and export schemas, demo paths |
+| `demo_data/` | 12 synthetic workbooks and transparent fixture manifest |
+| `tests/` | Self-contained unit and integration tests |
+| `examples/` | One documented USD demonstration per enabled product |
+| `demo.py` | Complete headless scenario runner |
+| `docs/` | Walkthrough, architecture and portfolio adaptation notes |
+
+Author: [Uroš Petrović](https://github.com/urosrb99petrovic-beep). License: [MIT](LICENSE).

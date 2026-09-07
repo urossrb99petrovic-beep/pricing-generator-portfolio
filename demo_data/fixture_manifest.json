@@ -1,0 +1,3664 @@
+{
+  "description": "Fictional fixture values; not market prices or exchange rates.",
+  "countries": [
+    [
+      "United States",
+      "US"
+    ],
+    [
+      "Canada",
+      "CA"
+    ],
+    [
+      "United Kingdom",
+      "GB"
+    ],
+    [
+      "Germany",
+      "DE"
+    ],
+    [
+      "Brazil",
+      "BR"
+    ],
+    [
+      "Serbia",
+      "RS"
+    ]
+  ],
+  "workbooks": [
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.044,
+          0.034
+        ],
+        [
+          "United States",
+          "US",
+          0.048,
+          0.038
+        ],
+        [
+          "Canada",
+          "CA",
+          0.052,
+          0.042
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.056,
+          0.046
+        ],
+        [
+          "Germany",
+          "DE",
+          0.06,
+          0.05
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.064,
+          0.054
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.068,
+          0.058
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Premium SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.053,
+          0.043
+        ],
+        [
+          "United States",
+          "US",
+          0.057,
+          0.047
+        ],
+        [
+          "Canada",
+          "CA",
+          0.061,
+          0.051
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.065,
+          0.055
+        ],
+        [
+          "Germany",
+          "DE",
+          0.069,
+          0.059
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.073,
+          0.063
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.077,
+          0.067
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS MKT",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.062,
+          0.052
+        ],
+        [
+          "United States",
+          "US",
+          0.066,
+          0.056
+        ],
+        [
+          "Canada",
+          "CA",
+          0.07,
+          0.06
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.074,
+          0.064
+        ],
+        [
+          "Germany",
+          "DE",
+          0.078,
+          0.068
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.082,
+          0.072
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.086,
+          0.076
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.069,
+          0.059
+        ],
+        [
+          "Brazil - Local Companies",
+          0.073,
+          0.063
+        ],
+        [
+          "Serbia - Local Companies",
+          0.077,
+          0.067
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local Premium SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.078,
+          0.068
+        ],
+        [
+          "Brazil - Local Companies",
+          0.082,
+          0.072
+        ],
+        [
+          "Serbia - Local Companies",
+          0.086,
+          0.076
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "2-way SMS",
+      "rows": 4,
+      "fields": [
+        "lookup_value",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          0.087,
+          0.077
+        ],
+        [
+          "United States - Toll Free",
+          0.091,
+          0.081
+        ],
+        [
+          "United States - 10DLC",
+          0.095,
+          0.085
+        ],
+        [
+          "Canada - Toll Free",
+          0.099,
+          0.089
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Transaction",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.098,
+          0.1,
+          0.09,
+          0.092
+        ],
+        [
+          "United States",
+          "US",
+          0.102,
+          0.104,
+          0.094,
+          0.096
+        ],
+        [
+          "Canada",
+          "CA",
+          0.106,
+          0.108,
+          0.098,
+          0.1
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.11,
+          0.112,
+          0.102,
+          0.104
+        ],
+        [
+          "Germany",
+          "DE",
+          0.114,
+          0.116,
+          0.106,
+          0.108
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.118,
+          0.12,
+          0.11,
+          0.112
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.122,
+          0.124,
+          0.114,
+          0.116
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Minute",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.107,
+          0.109,
+          0.099,
+          0.101
+        ],
+        [
+          "United States",
+          "US",
+          0.111,
+          0.113,
+          0.103,
+          0.105
+        ],
+        [
+          "Canada",
+          "CA",
+          0.115,
+          0.117,
+          0.107,
+          0.109
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.119,
+          0.121,
+          0.111,
+          0.113
+        ],
+        [
+          "Germany",
+          "DE",
+          0.123,
+          0.125,
+          0.115,
+          0.117
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.127,
+          0.129,
+          0.119,
+          0.121
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.131,
+          0.133,
+          0.123,
+          0.125
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice API (1-way and 2-way)",
+      "rows": 13,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price",
+        "number_type"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.116,
+          0.118,
+          0.12,
+          0.11,
+          0.112,
+          0.114,
+          null
+        ],
+        [
+          "United States",
+          "US",
+          0.12,
+          0.122,
+          0.124,
+          0.114,
+          0.116,
+          0.118,
+          "US Cloud numbers"
+        ],
+        [
+          "United States",
+          "US",
+          0.124,
+          0.126,
+          0.128,
+          0.118,
+          0.12,
+          0.122,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.128,
+          0.13,
+          0.132,
+          0.122,
+          0.124,
+          0.126,
+          "US Cloud numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.132,
+          0.134,
+          0.136,
+          0.126,
+          0.128,
+          0.13,
+          "Global Mobile Numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.136,
+          0.138,
+          0.14,
+          0.13,
+          0.132,
+          0.134,
+          "US Cloud numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.14,
+          0.142,
+          0.144,
+          0.134,
+          0.136,
+          0.138,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.144,
+          0.146,
+          0.148,
+          0.138,
+          0.14,
+          0.142,
+          "US Cloud numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.148,
+          0.15,
+          0.152,
+          0.142,
+          0.144,
+          0.146,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.152,
+          0.154,
+          0.156,
+          0.146,
+          0.148,
+          0.15,
+          "US Cloud numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.156,
+          0.158,
+          0.16,
+          0.15,
+          0.152,
+          0.154,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.16,
+          0.162,
+          "Not supported",
+          0.154,
+          0.156,
+          "Not supported",
+          "US Cloud numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.164,
+          0.166,
+          "Not supported",
+          0.158,
+          0.16,
+          "Not supported",
+          "Global Mobile Numbers"
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify + TTS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.125,
+          0.127,
+          0.129,
+          0.119,
+          0.121,
+          0.123
+        ],
+        [
+          "United States",
+          "US",
+          0.129,
+          0.131,
+          0.133,
+          0.123,
+          0.125,
+          0.127
+        ],
+        [
+          "Canada",
+          "CA",
+          0.133,
+          0.135,
+          0.137,
+          0.127,
+          0.129,
+          0.131
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.137,
+          0.139,
+          0.141,
+          0.131,
+          0.133,
+          0.135
+        ],
+        [
+          "Germany",
+          "DE",
+          0.141,
+          0.143,
+          0.145,
+          0.135,
+          0.137,
+          0.139
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.145,
+          0.147,
+          0.149,
+          0.139,
+          0.141,
+          0.143
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.149,
+          0.151,
+          "Not supported",
+          0.143,
+          0.145,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Toll-Free (Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_inbound_price",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.134,
+          0.136,
+          0.138,
+          0.128,
+          0.13,
+          0.132
+        ],
+        [
+          "United States",
+          "US",
+          0.138,
+          0.14,
+          0.142,
+          0.132,
+          0.134,
+          0.136
+        ],
+        [
+          "Canada",
+          "CA",
+          0.142,
+          0.144,
+          0.146,
+          0.136,
+          0.138,
+          0.14
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.146,
+          0.148,
+          0.15,
+          0.14,
+          0.142,
+          0.144
+        ],
+        [
+          "Germany",
+          "DE",
+          0.15,
+          0.152,
+          0.154,
+          0.144,
+          0.146,
+          0.148
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.154,
+          0.156,
+          0.158,
+          0.148,
+          0.15,
+          0.152
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.158,
+          0.16,
+          0.162,
+          0.152,
+          0.154,
+          0.156
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Mobile (SMS and Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_sms_outbound_price",
+        "baseline_sms_inbound_price",
+        "baseline_voice_outbound_price",
+        "baseline_voice_inbound_price",
+        "enterprise_sms_outbound_price",
+        "enterprise_sms_inbound_price",
+        "enterprise_voice_outbound_price",
+        "enterprise_voice_inbound_price"
+      ],
+      "values": [
+        [
+          "",
+          null,
+          0.143,
+          0.145,
+          0.147,
+          0.149,
+          0.139,
+          0.141,
+          0.143,
+          0.145
+        ],
+        [
+          "United States",
+          "US",
+          0.147,
+          0.149,
+          0.151,
+          0.153,
+          0.143,
+          0.145,
+          0.147,
+          0.149
+        ],
+        [
+          "Canada",
+          "CA",
+          0.151,
+          0.153,
+          0.155,
+          0.157,
+          0.147,
+          0.149,
+          0.151,
+          0.153
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.155,
+          0.157,
+          0.159,
+          0.161,
+          0.151,
+          0.153,
+          0.155,
+          0.157
+        ],
+        [
+          "Germany",
+          "DE",
+          0.159,
+          0.161,
+          0.163,
+          0.165,
+          0.155,
+          0.157,
+          0.159,
+          0.161
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.163,
+          0.165,
+          0.167,
+          0.169,
+          0.159,
+          0.161,
+          0.163,
+          0.165
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.167,
+          "Not supported",
+          0.171,
+          "Not supported",
+          0.163,
+          "Not supported",
+          0.167,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic WhatsApp.xlsx",
+      "sheet": "WhatsApp Telesign",
+      "rows": 7,
+      "fields": [
+        "market",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "Other",
+          null,
+          0.044,
+          0.034
+        ],
+        [
+          "United States",
+          "US",
+          0.048,
+          0.038
+        ],
+        [
+          "Canada",
+          "CA",
+          0.052,
+          0.042
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.056,
+          0.046
+        ],
+        [
+          "Germany",
+          "DE",
+          0.06,
+          0.05
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.064,
+          0.054
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.068,
+          0.058
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Viber.xlsx",
+      "sheet": "Viber Regular Companies",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "displayed_transactional_otp_price",
+        "displayed_promotional_price",
+        "displayed_session_chat_price",
+        "displayed_international_price",
+        "transactional_otp_cost",
+        "promotional_cost",
+        "session_chat_cost",
+        "international_cost",
+        "baseline_dm",
+        "enterprise_dm"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.044,
+          0.046,
+          0.048,
+          0.05,
+          0.052,
+          0.054,
+          0.056,
+          0.058,
+          0.25,
+          0.2
+        ],
+        [
+          "United States",
+          "US",
+          0.048,
+          0.05,
+          0.052,
+          0.054,
+          0.056,
+          0.058,
+          0.06,
+          0.062,
+          0.25,
+          0.2
+        ],
+        [
+          "Canada",
+          "CA",
+          0.052,
+          0.054,
+          0.056,
+          0.058,
+          0.06,
+          0.062,
+          0.064,
+          0.066,
+          0.25,
+          0.2
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.056,
+          0.058,
+          0.06,
+          0.062,
+          0.064,
+          0.066,
+          0.068,
+          0.07,
+          0.25,
+          0.2
+        ],
+        [
+          "Germany",
+          "DE",
+          0.06,
+          0.062,
+          0.064,
+          0.066,
+          0.068,
+          0.07,
+          0.072,
+          0.074,
+          0.25,
+          0.2
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.064,
+          0.066,
+          0.068,
+          0.07,
+          0.072,
+          0.074,
+          0.076,
+          0.078,
+          0.25,
+          0.2
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.068,
+          0.07,
+          0.072,
+          0.074,
+          0.076,
+          0.078,
+          0.08,
+          0.082,
+          0.25,
+          0.2
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Single pricing",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "phone_id_standard",
+        "phone_id_contact",
+        "phone_id_contact_match",
+        "phone_id_number_deactivation",
+        "phone_id_porting_history",
+        "phone_id_porting_status",
+        "phone_id_sim_swap",
+        "phone_id_subscriber_status",
+        "phone_id_cfd",
+        "phone_id_age_verify",
+        "phone_id_breached_data",
+        "phone_id_active_call_status"
+      ],
+      "values": [
+        [
+          "United States",
+          "US",
+          0.044,
+          0.046,
+          0.048,
+          null,
+          0.052,
+          0.054,
+          0.056,
+          0.058,
+          null,
+          0.062,
+          0.064,
+          0.066
+        ],
+        [
+          "Canada",
+          "CA",
+          0.048,
+          0.05,
+          "n/a",
+          0.054,
+          0.056,
+          0.058,
+          0.06,
+          "n/a",
+          0.064,
+          0.066,
+          0.068,
+          0.07
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.052,
+          0.054,
+          0.056,
+          0.058,
+          0.06,
+          0.062,
+          "Upon request",
+          0.066,
+          0.068,
+          0.07,
+          0.072,
+          "Upon request"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.056,
+          0.058,
+          0.06,
+          0.062,
+          0.064,
+          null,
+          0.068,
+          0.07,
+          0.072,
+          0.074,
+          null,
+          0.078
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.06,
+          0.062,
+          0.064,
+          0.066,
+          "n/a",
+          0.07,
+          0.072,
+          0.074,
+          0.076,
+          "n/a",
+          0.08,
+          0.082
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.064,
+          0.066,
+          0.068,
+          "Upon request",
+          0.072,
+          0.074,
+          0.076,
+          0.078,
+          "Upon request",
+          0.082,
+          0.084,
+          0.086
+        ],
+        [
+          "All other countries",
+          null,
+          0.068,
+          0.07,
+          0.072,
+          0.074,
+          0.076,
+          0.078,
+          0.08,
+          0.082,
+          0.084,
+          0.086,
+          0.088,
+          0.09
+        ]
+      ]
+    },
+    {
+      "currency": "USD",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Phone ID Live Status",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "mobile_price",
+        "landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.053,
+          0.055
+        ],
+        [
+          "United States",
+          "US",
+          0.057,
+          0.059
+        ],
+        [
+          "Canada",
+          "CA",
+          0.061,
+          0.063
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.065,
+          0.067
+        ],
+        [
+          "Germany",
+          "DE",
+          0.069,
+          0.071
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.073,
+          0.075
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.077,
+          0.079
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.154,
+          0.144
+        ],
+        [
+          "United States",
+          "US",
+          0.158,
+          0.148
+        ],
+        [
+          "Canada",
+          "CA",
+          0.162,
+          0.152
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.166,
+          0.156
+        ],
+        [
+          "Germany",
+          "DE",
+          0.17,
+          0.16
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.174,
+          0.164
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.178,
+          0.168
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Premium SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.163,
+          0.153
+        ],
+        [
+          "United States",
+          "US",
+          0.167,
+          0.157
+        ],
+        [
+          "Canada",
+          "CA",
+          0.171,
+          0.161
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.175,
+          0.165
+        ],
+        [
+          "Germany",
+          "DE",
+          0.179,
+          0.169
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.183,
+          0.173
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.187,
+          0.177
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS MKT",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.172,
+          0.162
+        ],
+        [
+          "United States",
+          "US",
+          0.176,
+          0.166
+        ],
+        [
+          "Canada",
+          "CA",
+          0.18,
+          0.17
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.184,
+          0.174
+        ],
+        [
+          "Germany",
+          "DE",
+          0.188,
+          0.178
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.192,
+          0.182
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.196,
+          0.186
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.179,
+          0.169
+        ],
+        [
+          "Brazil - Local Companies",
+          0.183,
+          0.173
+        ],
+        [
+          "Serbia - Local Companies",
+          0.187,
+          0.177
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local Premium SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.188,
+          0.178
+        ],
+        [
+          "Brazil - Local Companies",
+          0.192,
+          0.182
+        ],
+        [
+          "Serbia - Local Companies",
+          0.196,
+          0.186
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "2-way SMS",
+      "rows": 4,
+      "fields": [
+        "lookup_value",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          0.197,
+          0.187
+        ],
+        [
+          "United States - Toll Free",
+          0.201,
+          0.191
+        ],
+        [
+          "United States - 10DLC",
+          0.205,
+          0.195
+        ],
+        [
+          "Canada - Toll Free",
+          0.209,
+          0.199
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Transaction",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.208,
+          0.21,
+          0.2,
+          0.202
+        ],
+        [
+          "United States",
+          "US",
+          0.212,
+          0.214,
+          0.204,
+          0.206
+        ],
+        [
+          "Canada",
+          "CA",
+          0.216,
+          0.218,
+          0.208,
+          0.21
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.22,
+          0.222,
+          0.212,
+          0.214
+        ],
+        [
+          "Germany",
+          "DE",
+          0.224,
+          0.226,
+          0.216,
+          0.218
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.228,
+          0.23,
+          0.22,
+          0.222
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.232,
+          0.234,
+          0.224,
+          0.226
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Minute",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.217,
+          0.219,
+          0.209,
+          0.211
+        ],
+        [
+          "United States",
+          "US",
+          0.221,
+          0.223,
+          0.213,
+          0.215
+        ],
+        [
+          "Canada",
+          "CA",
+          0.225,
+          0.227,
+          0.217,
+          0.219
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.229,
+          0.231,
+          0.221,
+          0.223
+        ],
+        [
+          "Germany",
+          "DE",
+          0.233,
+          0.235,
+          0.225,
+          0.227
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.237,
+          0.239,
+          0.229,
+          0.231
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.241,
+          0.243,
+          0.233,
+          0.235
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice API (1-way and 2-way)",
+      "rows": 13,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price",
+        "number_type"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.226,
+          0.228,
+          0.23,
+          0.22,
+          0.222,
+          0.224,
+          null
+        ],
+        [
+          "United States",
+          "US",
+          0.23,
+          0.232,
+          0.234,
+          0.224,
+          0.226,
+          0.228,
+          "US Cloud numbers"
+        ],
+        [
+          "United States",
+          "US",
+          0.234,
+          0.236,
+          0.238,
+          0.228,
+          0.23,
+          0.232,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.238,
+          0.24,
+          0.242,
+          0.232,
+          0.234,
+          0.236,
+          "US Cloud numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.242,
+          0.244,
+          0.246,
+          0.236,
+          0.238,
+          0.24,
+          "Global Mobile Numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.246,
+          0.248,
+          0.25,
+          0.24,
+          0.242,
+          0.244,
+          "US Cloud numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.25,
+          0.252,
+          0.254,
+          0.244,
+          0.246,
+          0.248,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.254,
+          0.256,
+          0.258,
+          0.248,
+          0.25,
+          0.252,
+          "US Cloud numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.258,
+          0.26,
+          0.262,
+          0.252,
+          0.254,
+          0.256,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.262,
+          0.264,
+          0.266,
+          0.256,
+          0.258,
+          0.26,
+          "US Cloud numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.266,
+          0.268,
+          0.27,
+          0.26,
+          0.262,
+          0.264,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.27,
+          0.272,
+          "Not supported",
+          0.264,
+          0.266,
+          "Not supported",
+          "US Cloud numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.274,
+          0.276,
+          "Not supported",
+          0.268,
+          0.27,
+          "Not supported",
+          "Global Mobile Numbers"
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify + TTS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.235,
+          0.237,
+          0.239,
+          0.229,
+          0.231,
+          0.233
+        ],
+        [
+          "United States",
+          "US",
+          0.239,
+          0.241,
+          0.243,
+          0.233,
+          0.235,
+          0.237
+        ],
+        [
+          "Canada",
+          "CA",
+          0.243,
+          0.245,
+          0.247,
+          0.237,
+          0.239,
+          0.241
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.247,
+          0.249,
+          0.251,
+          0.241,
+          0.243,
+          0.245
+        ],
+        [
+          "Germany",
+          "DE",
+          0.251,
+          0.253,
+          0.255,
+          0.245,
+          0.247,
+          0.249
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.255,
+          0.257,
+          0.259,
+          0.249,
+          0.251,
+          0.253
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.259,
+          0.261,
+          "Not supported",
+          0.253,
+          0.255,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Toll-Free (Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_inbound_price",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.244,
+          0.246,
+          0.248,
+          0.238,
+          0.24,
+          0.242
+        ],
+        [
+          "United States",
+          "US",
+          0.248,
+          0.25,
+          0.252,
+          0.242,
+          0.244,
+          0.246
+        ],
+        [
+          "Canada",
+          "CA",
+          0.252,
+          0.254,
+          0.256,
+          0.246,
+          0.248,
+          0.25
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.256,
+          0.258,
+          0.26,
+          0.25,
+          0.252,
+          0.254
+        ],
+        [
+          "Germany",
+          "DE",
+          0.26,
+          0.262,
+          0.264,
+          0.254,
+          0.256,
+          0.258
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.264,
+          0.266,
+          0.268,
+          0.258,
+          0.26,
+          0.262
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.268,
+          0.27,
+          0.272,
+          0.262,
+          0.264,
+          0.266
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Mobile (SMS and Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_sms_outbound_price",
+        "baseline_sms_inbound_price",
+        "baseline_voice_outbound_price",
+        "baseline_voice_inbound_price",
+        "enterprise_sms_outbound_price",
+        "enterprise_sms_inbound_price",
+        "enterprise_voice_outbound_price",
+        "enterprise_voice_inbound_price"
+      ],
+      "values": [
+        [
+          "",
+          null,
+          0.253,
+          0.255,
+          0.257,
+          0.259,
+          0.249,
+          0.251,
+          0.253,
+          0.255
+        ],
+        [
+          "United States",
+          "US",
+          0.257,
+          0.259,
+          0.261,
+          0.263,
+          0.253,
+          0.255,
+          0.257,
+          0.259
+        ],
+        [
+          "Canada",
+          "CA",
+          0.261,
+          0.263,
+          0.265,
+          0.267,
+          0.257,
+          0.259,
+          0.261,
+          0.263
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.265,
+          0.267,
+          0.269,
+          0.271,
+          0.261,
+          0.263,
+          0.265,
+          0.267
+        ],
+        [
+          "Germany",
+          "DE",
+          0.269,
+          0.271,
+          0.273,
+          0.275,
+          0.265,
+          0.267,
+          0.269,
+          0.271
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.273,
+          0.275,
+          0.277,
+          0.279,
+          0.269,
+          0.271,
+          0.273,
+          0.275
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.277,
+          "Not supported",
+          0.281,
+          "Not supported",
+          0.273,
+          "Not supported",
+          0.277,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic WhatsApp.xlsx",
+      "sheet": "WhatsApp Telesign",
+      "rows": 7,
+      "fields": [
+        "market",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "Other",
+          null,
+          0.154,
+          0.144
+        ],
+        [
+          "United States",
+          "US",
+          0.158,
+          0.148
+        ],
+        [
+          "Canada",
+          "CA",
+          0.162,
+          0.152
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.166,
+          0.156
+        ],
+        [
+          "Germany",
+          "DE",
+          0.17,
+          0.16
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.174,
+          0.164
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.178,
+          0.168
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Viber.xlsx",
+      "sheet": "Viber Regular Companies",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "displayed_transactional_otp_price",
+        "displayed_promotional_price",
+        "displayed_session_chat_price",
+        "displayed_international_price",
+        "transactional_otp_cost",
+        "promotional_cost",
+        "session_chat_cost",
+        "international_cost",
+        "baseline_dm",
+        "enterprise_dm"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.154,
+          0.156,
+          0.158,
+          0.16,
+          0.162,
+          0.164,
+          0.166,
+          0.168,
+          0.25,
+          0.2
+        ],
+        [
+          "United States",
+          "US",
+          0.158,
+          0.16,
+          0.162,
+          0.164,
+          0.166,
+          0.168,
+          0.17,
+          0.172,
+          0.25,
+          0.2
+        ],
+        [
+          "Canada",
+          "CA",
+          0.162,
+          0.164,
+          0.166,
+          0.168,
+          0.17,
+          0.172,
+          0.174,
+          0.176,
+          0.25,
+          0.2
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.166,
+          0.168,
+          0.17,
+          0.172,
+          0.174,
+          0.176,
+          0.178,
+          0.18,
+          0.25,
+          0.2
+        ],
+        [
+          "Germany",
+          "DE",
+          0.17,
+          0.172,
+          0.174,
+          0.176,
+          0.178,
+          0.18,
+          0.182,
+          0.184,
+          0.25,
+          0.2
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.174,
+          0.176,
+          0.178,
+          0.18,
+          0.182,
+          0.184,
+          0.186,
+          0.188,
+          0.25,
+          0.2
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.178,
+          0.18,
+          0.182,
+          0.184,
+          0.186,
+          0.188,
+          0.19,
+          0.192,
+          0.25,
+          0.2
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Single pricing",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "phone_id_standard",
+        "phone_id_contact",
+        "phone_id_contact_match",
+        "phone_id_number_deactivation",
+        "phone_id_porting_history",
+        "phone_id_porting_status",
+        "phone_id_sim_swap",
+        "phone_id_subscriber_status",
+        "phone_id_cfd",
+        "phone_id_age_verify",
+        "phone_id_breached_data",
+        "phone_id_active_call_status"
+      ],
+      "values": [
+        [
+          "United States",
+          "US",
+          0.154,
+          0.156,
+          0.158,
+          null,
+          0.162,
+          0.164,
+          0.166,
+          0.168,
+          null,
+          0.172,
+          0.174,
+          0.176
+        ],
+        [
+          "Canada",
+          "CA",
+          0.158,
+          0.16,
+          "n/a",
+          0.164,
+          0.166,
+          0.168,
+          0.17,
+          "n/a",
+          0.174,
+          0.176,
+          0.178,
+          0.18
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.162,
+          0.164,
+          0.166,
+          0.168,
+          0.17,
+          0.172,
+          "Upon request",
+          0.176,
+          0.178,
+          0.18,
+          0.182,
+          "Upon request"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.166,
+          0.168,
+          0.17,
+          0.172,
+          0.174,
+          null,
+          0.178,
+          0.18,
+          0.182,
+          0.184,
+          null,
+          0.188
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.17,
+          0.172,
+          0.174,
+          0.176,
+          "n/a",
+          0.18,
+          0.182,
+          0.184,
+          0.186,
+          "n/a",
+          0.19,
+          0.192
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.174,
+          0.176,
+          0.178,
+          "Upon request",
+          0.182,
+          0.184,
+          0.186,
+          0.188,
+          "Upon request",
+          0.192,
+          0.194,
+          0.196
+        ],
+        [
+          "All other countries",
+          null,
+          0.178,
+          0.18,
+          0.182,
+          0.184,
+          0.186,
+          0.188,
+          0.19,
+          0.192,
+          0.194,
+          0.196,
+          0.198,
+          0.2
+        ]
+      ]
+    },
+    {
+      "currency": "EUR",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Phone ID Live Status",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "mobile_price",
+        "landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.163,
+          0.165
+        ],
+        [
+          "United States",
+          "US",
+          0.167,
+          0.169
+        ],
+        [
+          "Canada",
+          "CA",
+          0.171,
+          0.173
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.175,
+          0.177
+        ],
+        [
+          "Germany",
+          "DE",
+          0.179,
+          0.181
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.183,
+          0.185
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.187,
+          0.189
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.264,
+          0.254
+        ],
+        [
+          "United States",
+          "US",
+          0.268,
+          0.258
+        ],
+        [
+          "Canada",
+          "CA",
+          0.272,
+          0.262
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.276,
+          0.266
+        ],
+        [
+          "Germany",
+          "DE",
+          0.28,
+          0.27
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.284,
+          0.274
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.288,
+          0.278
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Premium SMS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.273,
+          0.263
+        ],
+        [
+          "United States",
+          "US",
+          0.277,
+          0.267
+        ],
+        [
+          "Canada",
+          "CA",
+          0.281,
+          0.271
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.285,
+          0.275
+        ],
+        [
+          "Germany",
+          "DE",
+          0.289,
+          0.279
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.293,
+          0.283
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.297,
+          0.287
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "SMS MKT",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.282,
+          0.272
+        ],
+        [
+          "United States",
+          "US",
+          0.286,
+          0.276
+        ],
+        [
+          "Canada",
+          "CA",
+          0.29,
+          0.28
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.294,
+          0.284
+        ],
+        [
+          "Germany",
+          "DE",
+          0.298,
+          0.288
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.302,
+          0.292
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.306,
+          0.296
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.289,
+          0.279
+        ],
+        [
+          "Brazil - Local Companies",
+          0.293,
+          0.283
+        ],
+        [
+          "Serbia - Local Companies",
+          0.297,
+          0.287
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Local Premium SMS",
+      "rows": 3,
+      "fields": [
+        "country",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "United States - Local Companies",
+          0.298,
+          0.288
+        ],
+        [
+          "Brazil - Local Companies",
+          0.302,
+          0.292
+        ],
+        [
+          "Serbia - Local Companies",
+          0.306,
+          0.296
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "2-way SMS",
+      "rows": 4,
+      "fields": [
+        "lookup_value",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          0.307,
+          0.297
+        ],
+        [
+          "United States - Toll Free",
+          0.311,
+          0.301
+        ],
+        [
+          "United States - 10DLC",
+          0.315,
+          0.305
+        ],
+        [
+          "Canada - Toll Free",
+          0.319,
+          0.309
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Transaction",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.318,
+          0.32,
+          0.31,
+          0.312
+        ],
+        [
+          "United States",
+          "US",
+          0.322,
+          0.324,
+          0.314,
+          0.316
+        ],
+        [
+          "Canada",
+          "CA",
+          0.326,
+          0.328,
+          0.318,
+          0.32
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.33,
+          0.332,
+          0.322,
+          0.324
+        ],
+        [
+          "Germany",
+          "DE",
+          0.334,
+          0.336,
+          0.326,
+          0.328
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.338,
+          0.34,
+          0.33,
+          0.332
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.342,
+          0.344,
+          0.334,
+          0.336
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify Per Minute",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.327,
+          0.329,
+          0.319,
+          0.321
+        ],
+        [
+          "United States",
+          "US",
+          0.331,
+          0.333,
+          0.323,
+          0.325
+        ],
+        [
+          "Canada",
+          "CA",
+          0.335,
+          0.337,
+          0.327,
+          0.329
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.339,
+          0.341,
+          0.331,
+          0.333
+        ],
+        [
+          "Germany",
+          "DE",
+          0.343,
+          0.345,
+          0.335,
+          0.337
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.347,
+          0.349,
+          0.339,
+          0.341
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.351,
+          0.353,
+          0.343,
+          0.345
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice API (1-way and 2-way)",
+      "rows": 13,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price",
+        "number_type"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.336,
+          0.338,
+          0.34,
+          0.33,
+          0.332,
+          0.334,
+          null
+        ],
+        [
+          "United States",
+          "US",
+          0.34,
+          0.342,
+          0.344,
+          0.334,
+          0.336,
+          0.338,
+          "US Cloud numbers"
+        ],
+        [
+          "United States",
+          "US",
+          0.344,
+          0.346,
+          0.348,
+          0.338,
+          0.34,
+          0.342,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.348,
+          0.35,
+          0.352,
+          0.342,
+          0.344,
+          0.346,
+          "US Cloud numbers"
+        ],
+        [
+          "Canada",
+          "CA",
+          0.352,
+          0.354,
+          0.356,
+          0.346,
+          0.348,
+          0.35,
+          "Global Mobile Numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.356,
+          0.358,
+          0.36,
+          0.35,
+          0.352,
+          0.354,
+          "US Cloud numbers"
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.36,
+          0.362,
+          0.364,
+          0.354,
+          0.356,
+          0.358,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.364,
+          0.366,
+          0.368,
+          0.358,
+          0.36,
+          0.362,
+          "US Cloud numbers"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.368,
+          0.37,
+          0.372,
+          0.362,
+          0.364,
+          0.366,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.372,
+          0.374,
+          0.376,
+          0.366,
+          0.368,
+          0.37,
+          "US Cloud numbers"
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.376,
+          0.378,
+          0.38,
+          0.37,
+          0.372,
+          0.374,
+          "Global Mobile Numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.38,
+          0.382,
+          "Not supported",
+          0.374,
+          0.376,
+          "Not supported",
+          "US Cloud numbers"
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.384,
+          0.386,
+          "Not supported",
+          0.378,
+          0.38,
+          "Not supported",
+          "Global Mobile Numbers"
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Voice Verify + TTS",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "baseline_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price",
+        "enterprise_inbound_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.345,
+          0.347,
+          0.349,
+          0.339,
+          0.341,
+          0.343
+        ],
+        [
+          "United States",
+          "US",
+          0.349,
+          0.351,
+          0.353,
+          0.343,
+          0.345,
+          0.347
+        ],
+        [
+          "Canada",
+          "CA",
+          0.353,
+          0.355,
+          0.357,
+          0.347,
+          0.349,
+          0.351
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.357,
+          0.359,
+          0.361,
+          0.351,
+          0.353,
+          0.355
+        ],
+        [
+          "Germany",
+          "DE",
+          0.361,
+          0.363,
+          0.365,
+          0.355,
+          0.357,
+          0.359
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.365,
+          0.367,
+          0.369,
+          0.359,
+          0.361,
+          0.363
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.369,
+          0.371,
+          "Not supported",
+          0.363,
+          0.365,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Toll-Free (Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_inbound_price",
+        "baseline_mobile_price",
+        "baseline_landline_price",
+        "enterprise_inbound_price",
+        "enterprise_mobile_price",
+        "enterprise_landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.354,
+          0.356,
+          0.358,
+          0.348,
+          0.35,
+          0.352
+        ],
+        [
+          "United States",
+          "US",
+          0.358,
+          0.36,
+          0.362,
+          0.352,
+          0.354,
+          0.356
+        ],
+        [
+          "Canada",
+          "CA",
+          0.362,
+          0.364,
+          0.366,
+          0.356,
+          0.358,
+          0.36
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.366,
+          0.368,
+          0.37,
+          0.36,
+          0.362,
+          0.364
+        ],
+        [
+          "Germany",
+          "DE",
+          0.37,
+          0.372,
+          0.374,
+          0.364,
+          0.366,
+          0.368
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.374,
+          0.376,
+          0.378,
+          0.368,
+          0.37,
+          0.372
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.378,
+          0.38,
+          0.382,
+          0.372,
+          0.374,
+          0.376
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Communications.xlsx",
+      "sheet": "Mobile (SMS and Voice Enabled)",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "baseline_sms_outbound_price",
+        "baseline_sms_inbound_price",
+        "baseline_voice_outbound_price",
+        "baseline_voice_inbound_price",
+        "enterprise_sms_outbound_price",
+        "enterprise_sms_inbound_price",
+        "enterprise_voice_outbound_price",
+        "enterprise_voice_inbound_price"
+      ],
+      "values": [
+        [
+          "",
+          null,
+          0.363,
+          0.365,
+          0.367,
+          0.369,
+          0.359,
+          0.361,
+          0.363,
+          0.365
+        ],
+        [
+          "United States",
+          "US",
+          0.367,
+          0.369,
+          0.371,
+          0.373,
+          0.363,
+          0.365,
+          0.367,
+          0.369
+        ],
+        [
+          "Canada",
+          "CA",
+          0.371,
+          0.373,
+          0.375,
+          0.377,
+          0.367,
+          0.369,
+          0.371,
+          0.373
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.375,
+          0.377,
+          0.379,
+          0.381,
+          0.371,
+          0.373,
+          0.375,
+          0.377
+        ],
+        [
+          "Germany",
+          "DE",
+          0.379,
+          0.381,
+          0.383,
+          0.385,
+          0.375,
+          0.377,
+          0.379,
+          0.381
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.383,
+          0.385,
+          0.387,
+          0.389,
+          0.379,
+          0.381,
+          0.383,
+          0.385
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.387,
+          "Not supported",
+          0.391,
+          "Not supported",
+          0.383,
+          "Not supported",
+          0.387,
+          "Not supported"
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic WhatsApp.xlsx",
+      "sheet": "WhatsApp Telesign",
+      "rows": 7,
+      "fields": [
+        "market",
+        "iso2",
+        "baseline_price",
+        "enterprise_price"
+      ],
+      "values": [
+        [
+          "Other",
+          null,
+          0.264,
+          0.254
+        ],
+        [
+          "United States",
+          "US",
+          0.268,
+          0.258
+        ],
+        [
+          "Canada",
+          "CA",
+          0.272,
+          0.262
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.276,
+          0.266
+        ],
+        [
+          "Germany",
+          "DE",
+          0.28,
+          0.27
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.284,
+          0.274
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.288,
+          0.278
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Viber.xlsx",
+      "sheet": "Viber Regular Companies",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "displayed_transactional_otp_price",
+        "displayed_promotional_price",
+        "displayed_session_chat_price",
+        "displayed_international_price",
+        "transactional_otp_cost",
+        "promotional_cost",
+        "session_chat_cost",
+        "international_cost",
+        "baseline_dm",
+        "enterprise_dm"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.264,
+          0.266,
+          0.268,
+          0.27,
+          0.272,
+          0.274,
+          0.276,
+          0.278,
+          0.25,
+          0.2
+        ],
+        [
+          "United States",
+          "US",
+          0.268,
+          0.27,
+          0.272,
+          0.274,
+          0.276,
+          0.278,
+          0.28,
+          0.282,
+          0.25,
+          0.2
+        ],
+        [
+          "Canada",
+          "CA",
+          0.272,
+          0.274,
+          0.276,
+          0.278,
+          0.28,
+          0.282,
+          0.284,
+          0.286,
+          0.25,
+          0.2
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.276,
+          0.278,
+          0.28,
+          0.282,
+          0.284,
+          0.286,
+          0.288,
+          0.29,
+          0.25,
+          0.2
+        ],
+        [
+          "Germany",
+          "DE",
+          0.28,
+          0.282,
+          0.284,
+          0.286,
+          0.288,
+          0.29,
+          0.292,
+          0.294,
+          0.25,
+          0.2
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.284,
+          0.286,
+          0.288,
+          0.29,
+          0.292,
+          0.294,
+          0.296,
+          0.298,
+          0.25,
+          0.2
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.288,
+          0.29,
+          0.292,
+          0.294,
+          0.296,
+          0.298,
+          0.3,
+          0.302,
+          0.25,
+          0.2
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Single pricing",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "phone_id_standard",
+        "phone_id_contact",
+        "phone_id_contact_match",
+        "phone_id_number_deactivation",
+        "phone_id_porting_history",
+        "phone_id_porting_status",
+        "phone_id_sim_swap",
+        "phone_id_subscriber_status",
+        "phone_id_cfd",
+        "phone_id_age_verify",
+        "phone_id_breached_data",
+        "phone_id_active_call_status"
+      ],
+      "values": [
+        [
+          "United States",
+          "US",
+          0.264,
+          0.266,
+          0.268,
+          null,
+          0.272,
+          0.274,
+          0.276,
+          0.278,
+          null,
+          0.282,
+          0.284,
+          0.286
+        ],
+        [
+          "Canada",
+          "CA",
+          0.268,
+          0.27,
+          "n/a",
+          0.274,
+          0.276,
+          0.278,
+          0.28,
+          "n/a",
+          0.284,
+          0.286,
+          0.288,
+          0.29
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.272,
+          0.274,
+          0.276,
+          0.278,
+          0.28,
+          0.282,
+          "Upon request",
+          0.286,
+          0.288,
+          0.29,
+          0.292,
+          "Upon request"
+        ],
+        [
+          "Germany",
+          "DE",
+          0.276,
+          0.278,
+          0.28,
+          0.282,
+          0.284,
+          null,
+          0.288,
+          0.29,
+          0.292,
+          0.294,
+          null,
+          0.298
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.28,
+          0.282,
+          0.284,
+          0.286,
+          "n/a",
+          0.29,
+          0.292,
+          0.294,
+          0.296,
+          "n/a",
+          0.3,
+          0.302
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.284,
+          0.286,
+          0.288,
+          "Upon request",
+          0.292,
+          0.294,
+          0.296,
+          0.298,
+          "Upon request",
+          0.302,
+          0.304,
+          0.306
+        ],
+        [
+          "All other countries",
+          null,
+          0.288,
+          0.29,
+          0.292,
+          0.294,
+          0.296,
+          0.298,
+          0.3,
+          0.302,
+          0.304,
+          0.306,
+          0.308,
+          0.31
+        ]
+      ]
+    },
+    {
+      "currency": "BRL",
+      "filename": "Synthetic Phone ID.xlsx",
+      "sheet": "Phone ID Live Status",
+      "rows": 7,
+      "fields": [
+        "country",
+        "iso2",
+        "mobile_price",
+        "landline_price"
+      ],
+      "values": [
+        [
+          "All Others",
+          null,
+          0.273,
+          0.275
+        ],
+        [
+          "United States",
+          "US",
+          0.277,
+          0.279
+        ],
+        [
+          "Canada",
+          "CA",
+          0.281,
+          0.283
+        ],
+        [
+          "United Kingdom",
+          "GB",
+          0.285,
+          0.287
+        ],
+        [
+          "Germany",
+          "DE",
+          0.289,
+          0.291
+        ],
+        [
+          "Brazil",
+          "BR",
+          0.293,
+          0.295
+        ],
+        [
+          "Serbia",
+          "RS",
+          0.297,
+          0.299
+        ]
+      ]
+    }
+  ]
+}

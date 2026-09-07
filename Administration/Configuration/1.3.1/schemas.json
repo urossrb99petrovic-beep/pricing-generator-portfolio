@@ -1,0 +1,1154 @@
+{
+  "configuration_version": "1.3.1",
+
+  "workbook_schemas": {
+    "standard_pricing_worksheet": {
+      "description": "Schema used by SMS, Premium SMS and SMS MKT worksheets.",
+      "header_row": 1,
+      "all_other_countries_row": 2,
+      "data_start_row": 3,
+
+      "required_headers": {
+        "country": "Country",
+        "iso2": "ISO2",
+        "baseline_price": "Baseline",
+        "enterprise_price": "Enterprise"
+      },
+
+      "required_fields": [
+        "Country",
+        "ISO2",
+        "Baseline",
+        "Enterprise"
+      ],
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "iso2_must_be_unique": true,
+        "baseline_price_must_be_numeric": true,
+        "enterprise_price_must_be_numeric": true,
+        "all_other_countries_row_required": true
+      }
+    },
+
+    "local_pricing_worksheet": {
+      "description": "Schema used by Local SMS and Local Premium SMS worksheets.",
+      "header_row": 1,
+      "data_start_row": 2,
+
+      "required_headers": {
+        "country": "Country",
+        "baseline_price": "Baseline",
+        "enterprise_price": "Enterprise"
+      },
+
+      "required_fields": [
+        "Country",
+        "Baseline",
+        "Enterprise"
+      ],
+
+      "country_name_processing": {
+        "remove_suffix": " - Local Companies",
+        "trim_whitespace": true
+      },
+
+      "validation": {
+        "country_required": true,
+        "country_must_be_unique_after_processing": true,
+        "baseline_price_must_be_numeric": true,
+        "enterprise_price_must_be_numeric": true,
+        "all_other_countries_row_required": false
+      }
+    },
+
+    "sender_override_worksheet": {
+      "description": "Schema used by the 2-way SMS worksheet for sender-specific US and Canada overrides.",
+      "header_row": 1,
+      "all_other_countries_row": 2,
+      "data_start_row": 3,
+
+      "required_headers": {
+        "lookup_value": "Country",
+        "baseline_price": "Baseline SMS 2-Way Outbound Rate",
+        "enterprise_price": "Enterprise SMS 2-Way Outbound Rate"
+      },
+
+      "pricing_type_header_mapping": {
+        "Baseline": "Baseline SMS 2-Way Outbound Rate",
+        "Enterprise": "Enterprise SMS 2-Way Outbound Rate"
+      },
+
+      "required_fields": [
+        "Country",
+        "Baseline SMS 2-Way Outbound Rate",
+        "Enterprise SMS 2-Way Outbound Rate"
+      ],
+
+      "validation": {
+        "lookup_value_required": true,
+        "lookup_value_must_be_unique": true,
+        "iso2_must_be_unique": false,
+        "configured_lookup_value_must_match_exactly_one_row": true,
+        "baseline_price_must_be_numeric": true,
+        "enterprise_price_must_be_numeric": true,
+        "all_other_countries_row_required": true
+      }
+    },
+
+    "voice_verify_pricing_worksheet": {
+      "description": "Schema used by Voice Verify Per Transaction and Voice Verify Per Minute.",
+
+      "header_mode": "grouped_two_row",
+
+      "header_rows": {
+        "group_row": 1,
+        "detail_row": 2
+      },
+
+      "all_other_countries_row": 3,
+      "data_start_row": 4,
+
+      "required_headers": {
+        "country": {
+          "group": "Country",
+          "detail": null
+        },
+
+        "iso2": {
+          "group": "ISO2",
+          "detail": null
+        },
+
+        "baseline_mobile_price": {
+          "group": "Baseline",
+          "detail": "Mobile"
+        },
+
+        "baseline_landline_price": {
+          "group": "Baseline",
+          "detail": "Landline"
+        },
+
+        "enterprise_mobile_price": {
+          "group": "Enterprise",
+          "detail": "Mobile"
+        },
+
+        "enterprise_landline_price": {
+          "group": "Enterprise",
+          "detail": "Landline"
+        }
+      },
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "all_other_countries_row_required": true,
+        "baseline_mobile_price_must_be_numeric": true,
+        "baseline_landline_price_must_be_numeric": true,
+        "enterprise_mobile_price_must_be_numeric": true,
+        "enterprise_landline_price_must_be_numeric": true
+      }
+    },
+
+    "voice_api_pricing_worksheet": {
+      "description": "Schema used by Voice API (1-way and 2-way).",
+
+      "header_mode": "grouped_two_row",
+
+      "header_rows": {
+        "group_row": 1,
+        "detail_row": 2
+      },
+
+      "all_other_countries_row": 3,
+      "data_start_row": 4,
+
+      "required_headers": {
+        "country": {
+          "group": "Country",
+          "detail": null
+        },
+
+        "iso2": {
+          "group": "ISO2",
+          "detail": null
+        },
+
+        "baseline_mobile_price": {
+          "group": "Outbound Baseline",
+          "detail": "Mobile"
+        },
+
+        "baseline_landline_price": {
+          "group": "Outbound Baseline",
+          "detail": "Landline"
+        },
+
+        "baseline_inbound_price": {
+          "group": "Inbound Baseline",
+          "detail": null
+        },
+
+        "enterprise_mobile_price": {
+          "group": "Outbound Enterprise",
+          "detail": "Mobile"
+        },
+
+        "enterprise_landline_price": {
+          "group": "Outbound Enterprise",
+          "detail": "Landline"
+        },
+
+        "enterprise_inbound_price": {
+          "group": "Inbound Enterprise",
+          "detail": null
+        },
+
+        "number_type": {
+          "group": "Comment",
+          "detail": null
+        }
+      },
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "all_other_countries_row_required": true,
+        "outbound_prices_must_be_numeric": true,
+        "inbound_price_may_be_not_supported": true
+      }
+    },
+
+    "voice_verify_tts_pricing_worksheet": {
+      "description": "Schema used by Voice Verify + TTS.",
+
+      "header_mode": "grouped_two_row",
+
+      "header_rows": {
+        "group_row": 1,
+        "detail_row": 2
+      },
+
+      "all_other_countries_row": 3,
+      "data_start_row": 4,
+
+      "required_headers": {
+        "country": {
+          "group": "Country",
+          "detail": null
+        },
+
+        "iso2": {
+          "group": "ISO2",
+          "detail": null
+        },
+
+        "baseline_mobile_price": {
+          "group": "Outbound Baseline",
+          "detail": "Mobile"
+        },
+
+        "baseline_landline_price": {
+          "group": "Outbound Baseline",
+          "detail": "Landline"
+        },
+
+        "baseline_inbound_price": {
+          "group": "Inbound Baseline",
+          "detail": null
+        },
+
+        "enterprise_mobile_price": {
+          "group": "Outbound Enterprise",
+          "detail": "Mobile"
+        },
+
+        "enterprise_landline_price": {
+          "group": "Outbound Enterprise",
+          "detail": "Landline"
+        },
+
+        "enterprise_inbound_price": {
+          "group": "Inbound Enterprise",
+          "detail": null
+        }
+      },
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "all_other_countries_row_required": true,
+        "outbound_prices_must_be_numeric": true,
+        "inbound_price_may_be_not_supported": true,
+        "all_other_inbound_uses_landline_fallback": true
+      }
+    },
+
+    "toll_free_voice_pricing_worksheet": {
+      "description": "Schema used by Toll-Free (Voice Enabled).",
+
+      "header_mode": "grouped_two_row",
+
+      "header_rows": {
+        "group_row": 1,
+        "detail_row": 2
+      },
+
+      "all_other_countries_row": 3,
+      "data_start_row": 4,
+
+      "required_headers": {
+        "country": {
+          "group": "Country",
+          "detail": null
+        },
+
+        "iso2": {
+          "group": "ISO2",
+          "detail": null
+        },
+
+        "baseline_inbound_price": {
+          "group": "Inbound Baseline",
+          "detail": null
+        },
+
+        "baseline_mobile_price": {
+          "group": "Oubound baseline",
+          "detail": "Mobile"
+        },
+
+        "baseline_landline_price": {
+          "group": "Oubound baseline",
+          "detail": "Landline"
+        },
+
+        "enterprise_inbound_price": {
+          "group": "Inbound Enterprise",
+          "detail": null
+        },
+
+        "enterprise_mobile_price": {
+          "group": "Outbound enterprise",
+          "detail": "Mobile"
+        },
+
+        "enterprise_landline_price": {
+          "group": "Outbound enterprise",
+          "detail": "Landline"
+        }
+      },
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "all_other_countries_row_required": true,
+        "all_prices_must_be_numeric": true
+      }
+    },
+    
+    "mobile_sms_voice_pricing_worksheet": {
+      "description": "Schema used by Mobile (SMS and Voice Enabled).",
+
+      "header_mode": "single_row_aliases",
+      "header_row": 1,
+      "all_other_countries_row": 2,
+      "data_start_row": 3,
+
+      "required_headers": {
+        "country": [
+          "Country"
+        ],
+
+        "iso2": [
+          "ISO2"
+        ],
+
+        "baseline_sms_outbound_price": [
+          "Baseline SMS Outbound Price $",
+          "Baseline SMS Outbound Price (EUR)",
+          "Baseline SMS Outbound Price (BRL)"
+        ],
+
+        "baseline_sms_inbound_price": [
+          "Baseline SMS Inbound Price $",
+          "Baseline SMS Inbound Price (EUR)",
+          "Baseline SMS Inbound Price (BRL)"
+        ],
+
+        "baseline_voice_outbound_price": [
+          "Baseline Voice Outbound Price $",
+          "Baseline Voice Outbound Price (EUR)",
+          "Baseline Voice Outbound Price (BRL)"
+        ],
+
+        "baseline_voice_inbound_price": [
+          "Baseline Voice Inbound Price $",
+          "Baseline Voice Inbound Price (EUR)",
+          "Baseline Voice Inbound Price (BRL)"
+        ],
+
+        "enterprise_sms_outbound_price": [
+          "Enterprise SMS Outbound Price $",
+          "Enterprise SMS Outbound Price (EUR)",
+          "Enterprise SMS Outbound Price (BRL)",
+
+          "Enterprice SMS Outbound Price $",
+          "Enterprice SMS Outbound Price (EUR)",
+          "Enterprice SMS Outbound Price (BRL)"
+        ],
+
+        "enterprise_sms_inbound_price": [
+          "Enterprise SMS Inbound Price $",
+          "Enterprise SMS Inbound Price (EUR)",
+          "Enterprise SMS Inbound Price (BRL)",
+
+          "Enterprice SMS Inbound Price $",
+          "Enterprice SMS Inbound Price (EUR)",
+          "Enterprice SMS Inbound Price (BRL)"
+        ],
+
+        "enterprise_voice_outbound_price": [
+          "Enterprise Voice Outbound Price $",
+          "Enterprise Voice Outbound Price (EUR)",
+          "Enterprise Voice Outbound Price (BRL)",
+
+          "Enterprice Voice Outbound Price $",
+          "Enterprice Voice Outbound Price (EUR)",
+          "Enterprice Voice Outbound Price (BRL)"
+        ],
+
+        "enterprise_voice_inbound_price": [
+          "Enterprise Voice Inbound Price $",
+          "Enterprise Voice Inbound Price (EUR)",
+          "Enterprise Voice Inbound Price (BRL)",
+
+          "Enterprice Voice Inbound Price $",
+          "Enterprice Voice Inbound Price (EUR)",
+          "Enterprice Voice Inbound Price (BRL)"
+        ]
+      },
+
+      "validation": {
+        "country_required": true,
+        "iso2_required": true,
+        "all_other_countries_row_required": true,
+        "not_supported_price_allowed": true
+      }
+    },
+    "whatsapp_pricing_worksheet": {
+      "description": "Schema used by the WhatsApp Telesign worksheet.",
+
+      "header_row": 5,
+      "data_start_row": 6,
+
+      "required_headers": {
+        "market": "Market",
+        "iso2": "ISO 2",
+        "baseline_price": "Baseline Telesign fee",
+        "enterprise_price": "Mid Market Telesign fee"
+      },
+
+      "all_other_market_value": "Other",
+
+      "required_fields": [
+        "Market",
+        "ISO 2",
+        "Baseline Telesign fee",
+        "Mid Market Telesign fee"
+      ],
+
+      "validation": {
+        "all_other_market_required": true,
+        "all_other_market_must_be_unique": true,
+        "baseline_price_must_be_numeric": true,
+        "enterprise_price_must_be_numeric": true
+      }
+    },
+    "viber_pricing_worksheet": {
+      "description": "Schema used by the Viber Regular Companies worksheet.",
+
+      "header_row": 18,
+      "all_other_countries_row": 19,
+      "data_start_row": 20,
+
+      "required_headers": {
+        "country": "Country",
+        "iso2": "ISO2",
+
+        "displayed_transactional_otp_price": "Domestic Transactional/OTP",
+        "displayed_promotional_price": "Domestic Promotional",
+        "displayed_session_chat_price": "Domestic Session Chat",
+        "displayed_international_price": "International",
+
+        "transactional_otp_cost": "Cost Transactional/OTP",
+        "promotional_cost": "Cost Promotional",
+        "session_chat_cost": "Cost Session Chat",
+        "international_cost": "Cost International",
+
+        "baseline_dm": "DM% baseline",
+        "enterprise_dm": "DM% mid-market"
+      }
+    },
+    "phone_id_suite_pricing_worksheet": {
+      "description": "Schema used by the Phone ID Suite Single pricing worksheet.",
+      "header_row": 13,
+      "data_start_row": 14,
+      "header_start_column": "B",
+      "header_end_column": "O",
+      "all_other_country_value": "All other countries",
+      "all_other_terminates_table": true,
+      "unavailable_values": [
+        "n/a",
+        "Upon request"
+      ],
+      "excluded_country_values": [
+        "Brazil (full response including DOB)",
+        "United States (full response including DOB)"
+      ],
+      "required_headers": {
+        "country": "Country",
+        "iso2": "ISO 2",
+        "phone_id_standard": "Phone ID Standard",
+        "phone_id_contact": "Phone ID Contact",
+        "phone_id_contact_match": "Phone ID Contact Match",
+        "phone_id_number_deactivation": "Phone ID Number Deactivation",
+        "phone_id_porting_history": "Phone ID Porting History",
+        "phone_id_porting_status": "Phone ID Porting Status",
+        "phone_id_sim_swap": "Phone ID SIM Swap",
+        "phone_id_subscriber_status": "Phone ID Subscriber Status",
+        "phone_id_cfd": "Phone ID CFD",
+        "phone_id_age_verify": "Phone ID Age Verify",
+        "phone_id_breached_data": "Phone ID Breached Data",
+        "phone_id_active_call_status": "Phone ID Active Call Status"
+      }
+    },
+    "phone_id_live_status_pricing_worksheet": {
+      "description": "Schema used by the Phone ID Live Status worksheet.",
+      "header_row": 13,
+      "all_other_countries_row": 14,
+      "data_start_row": 15,
+      "header_start_column": "A",
+      "header_end_column": "D",
+      "required_headers": {
+        "country": "Country",
+        "iso2": "ISO2",
+        "mobile_price": "Mobile Price",
+        "landline_price": "Landline Price"
+      }
+    }
+  },
+
+  "output_csv_schema": {
+    "description": "CSV structure generated by the Pricing Generator.",
+
+    "rows": {
+      "band_definition_row": 1,
+      "band_threshold_row": 2,
+      "column_header_row": 3,
+      "all_other_countries_row": 4,
+      "country_data_start_row": 5
+    },
+
+    "columns": {
+      "A": "Country",
+      "B": "ISO2",
+      "C": "Band1",
+      "D": "Band2",
+      "E": "Band3",
+      "F": "Band4",
+      "G": "Band5",
+      "H": "Band6"
+    },
+
+    "band_definition_row": {
+      "A": "Band1",
+      "B": "Band2",
+      "C": "Band3",
+      "D": "Band4",
+      "E": "Band5",
+      "F": "Band6",
+      "G": null,
+      "H": null
+    },
+
+    "band_threshold_row": {
+      "A": 0,
+      "B": null,
+      "C": null,
+      "D": null,
+      "E": null,
+      "F": null,
+      "G": null,
+      "H": null
+    },
+
+    "column_header_row": {
+      "A": "Country",
+      "B": "ISO2",
+      "C": "Band1",
+      "D": "Band2",
+      "E": "Band3",
+      "F": "Band4",
+      "G": "Band5",
+      "H": "Band6"
+    },
+
+    "all_other_countries_row": {
+      "country": null,
+      "iso2": null,
+      "price_column": "Band1",
+      "price_source": "base_worksheet_all_other_countries_row",
+      "remaining_band_values": null
+    },
+
+    "country_data_rows": {
+      "country_source": "base_worksheet.Country",
+      "iso2_source": "base_worksheet.ISO2",
+      "price_column": "Band1",
+      "remaining_band_values": null
+    },
+
+    "validation": {
+      "exact_column_count": 8,
+      "band_definition_row_column_count": 6,
+      "band_threshold_row_column_count": 6,
+      "column_header_row_column_count": 8,
+      "country_data_row_column_count": 8,
+      "all_other_countries_price_required": true,
+      "country_price_required": true,
+      "price_must_be_numeric": true
+    }
+  },
+  "voice_output_csv_schemas": {
+    "voice_verify_transaction": {
+      "description": "CSV structure used by Voice Verify billed per transaction.",
+
+      "rows": {
+        "band_definition_row": 1,
+        "band_threshold_row": 2,
+        "column_header_row": 3,
+        "all_other_countries_row": 4,
+        "country_data_start_row": 5
+      },
+
+      "columns": {
+        "A": "Country",
+        "B": "ISO2",
+        "C": "Band1:Landline",
+        "D": "Band2:Landline",
+        "E": "Band3:Landline",
+        "F": "Band4:Landline",
+        "G": "Band5:Landline",
+        "H": "Band6:Landline",
+        "I": "Band1:Mobile",
+        "J": "Band2:Mobile",
+        "K": "Band3:Mobile",
+        "L": "Band4:Mobile",
+        "M": "Band5:Mobile",
+        "N": "Band6:Mobile"
+      },
+
+      "band_definition_row": {
+        "A": "Band1",
+        "B": "Band2",
+        "C": "Band3",
+        "D": "Band4",
+        "E": "Band5",
+        "F": "Band6"
+      },
+
+      "band_threshold_row": {
+        "A": 0,
+        "B": null,
+        "C": null,
+        "D": null,
+        "E": null,
+        "F": null
+      },
+
+      "column_header_row": {
+        "A": "Country",
+        "B": "ISO2",
+        "C": "Band1:Landline",
+        "D": "Band2:Landline",
+        "E": "Band3:Landline",
+        "F": "Band4:Landline",
+        "G": "Band5:Landline",
+        "H": "Band6:Landline",
+        "I": "Band1:Mobile",
+        "J": "Band2:Mobile",
+        "K": "Band3:Mobile",
+        "L": "Band4:Mobile",
+        "M": "Band5:Mobile",
+        "N": "Band6:Mobile"
+      },
+
+      "all_other_countries_row": {
+        "country": null,
+        "iso2": null,
+
+        "price_column_groups": {
+          "landline": [
+            "Band1:Landline"
+          ],
+          "mobile": [
+            "Band1:Mobile"
+          ]
+        },
+
+        "remaining_band_values": null
+      },
+
+      "country_data_rows": {
+        "country_source": "source.Country",
+        "iso2_source": "source.ISO2",
+
+        "price_column_groups": {
+          "landline": [
+            "Band1:Landline"
+          ],
+          "mobile": [
+            "Band1:Mobile"
+          ]
+        },
+
+        "remaining_band_values": null
+      },
+
+      "validation": {
+        "exact_column_count": 14,
+        "band_definition_row_column_count": 6,
+        "band_threshold_row_column_count": 6,
+        "column_header_row_column_count": 14,
+        "country_data_row_column_count": 14,
+        "all_other_countries_price_required": true,
+        "country_price_required": true,
+        "price_must_be_numeric": true
+      }
+    },
+
+    "voice_one_way": {
+      "description": "CSV structure used by one-way Voice products and Voice Verify billed per minute.",
+
+      "rows": {
+        "column_header_row": 1,
+        "all_other_countries_row": 2,
+        "country_data_start_row": 3
+      },
+
+      "columns": {
+        "A": "Country",
+        "B": "ISO2",
+        "C": "Landline",
+        "D": "Mobile"
+      },
+
+      "column_header_row": {
+        "A": "Country",
+        "B": "ISO2",
+        "C": "Landline",
+        "D": "Mobile"
+      },
+
+      "all_other_countries_row": {
+        "country": null,
+        "iso2": null,
+
+        "price_column_groups": {
+          "landline": [
+            "Landline"
+          ],
+          "mobile": [
+            "Mobile"
+          ]
+        }
+      },
+
+      "country_data_rows": {
+        "country_source": "source.Country",
+        "iso2_source": "source.ISO2",
+
+        "price_column_groups": {
+          "landline": [
+            "Landline"
+          ],
+          "mobile": [
+            "Mobile"
+          ]
+        }
+      },
+
+      "validation": {
+        "exact_column_count": 4,
+        "column_header_row_column_count": 4,
+        "country_data_row_column_count": 4,
+        "all_other_countries_price_required": true,
+        "country_price_required": true,
+        "price_must_be_numeric": true
+      }
+    },
+
+    "voice_two_way": {
+      "description": "CSV structure used by two-way Voice products.",
+
+      "rows": {
+        "band_definition_row": 1,
+        "band_threshold_row": 2,
+        "column_header_row": 3,
+        "all_other_countries_row": 4,
+        "country_data_start_row": 5
+      },
+
+      "columns": {
+        "A": "Country",
+        "B": "ISO2",
+
+        "C": "Band1:LandlineGeneric",
+        "D": "Band2:LandlineGeneric",
+        "E": "Band3:LandlineGeneric",
+        "F": "Band4:LandlineGeneric",
+        "G": "Band5:LandlineGeneric",
+        "H": "Band6:LandlineGeneric",
+
+        "I": "Band1:MobileGeneric",
+        "J": "Band2:MobileGeneric",
+        "K": "Band3:MobileGeneric",
+        "L": "Band4:MobileGeneric",
+        "M": "Band5:MobileGeneric",
+        "N": "Band6:MobileGeneric",
+
+        "O": "Band1:LandlineInboundVoice",
+        "P": "Band2:LandlineInboundVoice",
+        "Q": "Band3:LandlineInboundVoice",
+        "R": "Band4:LandlineInboundVoice",
+        "S": "Band5:LandlineInboundVoice",
+        "T": "Band6:LandlineInboundVoice",
+
+        "U": "Band1:MobileInboundVoice",
+        "V": "Band2:MobileInboundVoice",
+        "W": "Band3:MobileInboundVoice",
+        "X": "Band4:MobileInboundVoice",
+        "Y": "Band5:MobileInboundVoice",
+        "Z": "Band6:MobileInboundVoice",
+
+        "AA": "Band1:LandlineOutboundVoice",
+        "AB": "Band2:LandlineOutboundVoice",
+        "AC": "Band3:LandlineOutboundVoice",
+        "AD": "Band4:LandlineOutboundVoice",
+        "AE": "Band5:LandlineOutboundVoice",
+        "AF": "Band6:LandlineOutboundVoice",
+
+        "AG": "Band1:MobileOutboundVoice",
+        "AH": "Band2:MobileOutboundVoice",
+        "AI": "Band3:MobileOutboundVoice",
+        "AJ": "Band4:MobileOutboundVoice",
+        "AK": "Band5:MobileOutboundVoice",
+        "AL": "Band6:MobileOutboundVoice"
+      },
+
+      "band_definition_row": {
+        "A": "Band1",
+        "B": "Band2",
+        "C": "Band3",
+        "D": "Band4",
+        "E": "Band5",
+        "F": "Band6"
+      },
+
+      "band_threshold_row": {
+        "A": 0,
+        "B": null,
+        "C": null,
+        "D": null,
+        "E": null,
+        "F": null
+      },
+
+      "column_header_row": {
+        "A": "Country",
+        "B": "ISO2",
+
+        "C": "Band1:LandlineGeneric",
+        "D": "Band2:LandlineGeneric",
+        "E": "Band3:LandlineGeneric",
+        "F": "Band4:LandlineGeneric",
+        "G": "Band5:LandlineGeneric",
+        "H": "Band6:LandlineGeneric",
+
+        "I": "Band1:MobileGeneric",
+        "J": "Band2:MobileGeneric",
+        "K": "Band3:MobileGeneric",
+        "L": "Band4:MobileGeneric",
+        "M": "Band5:MobileGeneric",
+        "N": "Band6:MobileGeneric",
+
+        "O": "Band1:LandlineInboundVoice",
+        "P": "Band2:LandlineInboundVoice",
+        "Q": "Band3:LandlineInboundVoice",
+        "R": "Band4:LandlineInboundVoice",
+        "S": "Band5:LandlineInboundVoice",
+        "T": "Band6:LandlineInboundVoice",
+
+        "U": "Band1:MobileInboundVoice",
+        "V": "Band2:MobileInboundVoice",
+        "W": "Band3:MobileInboundVoice",
+        "X": "Band4:MobileInboundVoice",
+        "Y": "Band5:MobileInboundVoice",
+        "Z": "Band6:MobileInboundVoice",
+
+        "AA": "Band1:LandlineOutboundVoice",
+        "AB": "Band2:LandlineOutboundVoice",
+        "AC": "Band3:LandlineOutboundVoice",
+        "AD": "Band4:LandlineOutboundVoice",
+        "AE": "Band5:LandlineOutboundVoice",
+        "AF": "Band6:LandlineOutboundVoice",
+
+        "AG": "Band1:MobileOutboundVoice",
+        "AH": "Band2:MobileOutboundVoice",
+        "AI": "Band3:MobileOutboundVoice",
+        "AJ": "Band4:MobileOutboundVoice",
+        "AK": "Band5:MobileOutboundVoice",
+        "AL": "Band6:MobileOutboundVoice"
+      },
+
+      "all_other_countries_row": {
+        "country": null,
+        "iso2": null,
+
+        "price_column_groups": {
+          "landline_outbound": [
+            "Band1:LandlineGeneric",
+            "Band1:LandlineOutboundVoice"
+          ],
+          "mobile_outbound": [
+            "Band1:MobileGeneric",
+            "Band1:MobileOutboundVoice"
+          ],
+          "inbound": [
+            "Band1:LandlineInboundVoice",
+            "Band1:MobileInboundVoice"
+          ]
+        },
+
+        "remaining_band_values": null
+      },
+
+      "country_data_rows": {
+        "country_source": "source.Country",
+        "iso2_source": "source.ISO2",
+
+        "price_column_groups": {
+          "landline_outbound": [
+            "Band1:LandlineGeneric",
+            "Band1:LandlineOutboundVoice"
+          ],
+          "mobile_outbound": [
+            "Band1:MobileGeneric",
+            "Band1:MobileOutboundVoice"
+          ],
+          "inbound": [
+            "Band1:LandlineInboundVoice",
+            "Band1:MobileInboundVoice"
+          ]
+        },
+
+        "remaining_band_values": null
+      },
+
+      "validation": {
+        "exact_column_count": 38,
+        "band_definition_row_column_count": 6,
+        "band_threshold_row_column_count": 6,
+        "column_header_row_column_count": 38,
+        "country_data_row_column_count": 38,
+        "all_other_countries_price_required": true,
+        "country_price_required": true,
+        "price_must_be_numeric": true
+      }
+    }
+  },
+  "viber_output_csv_schema": {
+    "row_1_headers": [
+      "Band1:viber-otp",
+      "Band2:viber-otp",
+      "Band3:viber-otp",
+      "Band4:viber-otp",
+      "Band5:viber-otp",
+      "Band6:viber-otp",
+
+      "Band1:viber-tran",
+      "Band2:viber-tran",
+      "Band3:viber-tran",
+      "Band4:viber-tran",
+      "Band5:viber-tran",
+      "Band6:viber-tran",
+
+      "Band1:viber-prom",
+      "Band2:viber-prom",
+      "Band3:viber-prom",
+      "Band4:viber-prom",
+      "Band5:viber-prom",
+      "Band6:viber-prom",
+
+      "Band1:viber-inter",
+      "Band2:viber-inter",
+      "Band3:viber-inter",
+      "Band4:viber-inter",
+      "Band5:viber-inter",
+      "Band6:viber-inter",
+
+      "Band1:viber-session",
+      "Band2:viber-session",
+      "Band3:viber-session",
+      "Band4:viber-session",
+      "Band5:viber-session",
+      "Band6:viber-session"
+    ],
+
+    "row_2_zero_columns": [
+      "A",
+      "G",
+      "M",
+      "S",
+      "Y"
+    ],
+
+    "row_3_headers": [
+      "Country",
+      "ISO2",
+
+      "Band1:viber-otp",
+      "Band2:viber-otp",
+      "Band3:viber-otp",
+      "Band4:viber-otp",
+      "Band5:viber-otp",
+      "Band6:viber-otp",
+
+      "Band1:viber-tran",
+      "Band2:viber-tran",
+      "Band3:viber-tran",
+      "Band4:viber-tran",
+      "Band5:viber-tran",
+      "Band6:viber-tran",
+
+      "Band1:viber-prom",
+      "Band2:viber-prom",
+      "Band3:viber-prom",
+      "Band4:viber-prom",
+      "Band5:viber-prom",
+      "Band6:viber-prom",
+
+      "Band1:viber-inter",
+      "Band2:viber-inter",
+      "Band3:viber-inter",
+      "Band4:viber-inter",
+      "Band5:viber-inter",
+      "Band6:viber-inter",
+
+      "Band1:viber-session",
+      "Band2:viber-session",
+      "Band3:viber-session",
+      "Band4:viber-session",
+      "Band5:viber-session",
+      "Band6:viber-session"
+    ],
+
+    "price_columns": {
+      "transactional_otp_primary": "C",
+      "transactional_otp_secondary": "I",
+      "promotional": "O",
+      "international": "U",
+      "session_chat": "AA"
+    }
+  },
+
+  "output_schema_rules": {
+    "VOICE_VERIFY": {
+      "option_id": "billing_type",
+
+      "mappings": {
+        "PER_TRANSACTION": "voice_verify_transaction",
+        "PER_MINUTE": "voice_one_way"
+      }
+    },
+
+    "VOICE": {
+      "option_id": "traffic_type",
+
+      "mappings": {
+        "ONE_WAY": "voice_one_way",
+        "TWO_WAY": "voice_two_way"
+      }
+    },
+
+    "VOICE_VERIFY_TTS": {
+      "option_id": "traffic_type",
+
+      "mappings": {
+        "ONE_WAY": "voice_one_way",
+        "TWO_WAY": "voice_two_way"
+      }
+    },
+
+    "TOLL_FREE_VOICE": {
+      "fixed_schema": "voice_two_way"
+    },
+    
+    "PHONE_ID_LIVE_STATUS": {
+      "fixed_schema": "voice_verify_transaction"
+    }
+  },
+
+  "multi_output_definitions": {
+    "MOBILE_SMS_VOICE": {
+      "ONE_WAY": [
+        {
+          "output_id": "SMS_OUTBOUND",
+          "display_name": "SMS Outbound",
+          "schema_source": "output_csv_schema"
+        },
+        {
+          "output_id": "VOICE",
+          "display_name": "Voice",
+          "schema_source": "voice_output_csv_schemas.voice_one_way"
+        }
+      ],
+
+      "TWO_WAY": [
+        {
+          "output_id": "SMS_OUTBOUND",
+          "display_name": "SMS Outbound",
+          "schema_source": "output_csv_schema"
+        },
+        {
+          "output_id": "SMS_INBOUND",
+          "display_name": "SMS Inbound",
+          "schema_source": "output_csv_schema"
+        },
+        {
+          "output_id": "VOICE",
+          "display_name": "Voice",
+          "schema_source": "voice_output_csv_schemas.voice_two_way"
+        }
+      ]
+    }
+  },
+
+  "price_selection": {
+    "Baseline": {
+      "standard_worksheet_header": "Baseline",
+      "local_worksheet_header": "Baseline",
+      "sender_override_header": "Baseline SMS 2-Way Outbound Rate"
+    },
+
+    "Enterprise": {
+      "standard_worksheet_header": "Enterprise",
+      "local_worksheet_header": "Enterprise",
+      "sender_override_header": "Enterprise SMS 2-Way Outbound Rate"
+    }
+  }
+}

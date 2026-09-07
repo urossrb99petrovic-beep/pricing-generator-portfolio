@@ -1,0 +1,253 @@
+[
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "SMS",
+      "pricing_type": "Enterprise",
+      "sender_ids": {
+        "US": "10DLC",
+        "CA": "TOLL_FREE"
+      },
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "SMS/USD - SMS - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "PREMIUM_SMS",
+      "pricing_type": "Enterprise",
+      "sender_ids": {
+        "US": "10DLC",
+        "CA": "TOLL_FREE"
+      },
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "PREMIUM_SMS/USD - Premium SMS - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "LOCAL_SMS",
+      "pricing_type": "Enterprise",
+      "sender_ids": {
+        "US": "10DLC",
+        "CA": "TOLL_FREE"
+      },
+      "local_countries": [
+        "United States",
+        "Brazil",
+        "Serbia"
+      ],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "LOCAL_SMS/USD - Local SMS - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "LOCAL_PREMIUM_SMS",
+      "pricing_type": "Enterprise",
+      "sender_ids": {
+        "US": "10DLC",
+        "CA": "TOLL_FREE"
+      },
+      "local_countries": [
+        "United States",
+        "Brazil",
+        "Serbia"
+      ],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "LOCAL_PREMIUM_SMS/USD - Local Premium SMS - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "SMS_MARKETING",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "SMS_MARKETING/USD - SMS Marketing - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "VOICE_VERIFY",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {
+        "billing_type": "PER_MINUTE"
+      },
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "VOICE_VERIFY/USD - Voice Verify - Per Minute - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "VOICE",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {
+        "traffic_type": "TWO_WAY",
+        "number_type": "GLOBAL_MOBILE_NUMBERS"
+      },
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "VOICE/USD - Voice - 2-Way - Global Mobile Numbers - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "VOICE_VERIFY_TTS",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {
+        "traffic_type": "TWO_WAY"
+      },
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "VOICE_VERIFY_TTS/USD - Voice Verify + TTS - 2-Way - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "MOBILE_SMS_VOICE",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {
+        "traffic_type": "TWO_WAY"
+      },
+      "selected_subproducts": []
+    },
+    "files": {
+      "SMS_OUTBOUND": "MOBILE_SMS_VOICE/USD - Mobile (SMS and Voice) - SMS Outbound - Enterprise - template Sep 2026.csv",
+      "SMS_INBOUND": "MOBILE_SMS_VOICE/USD - Mobile (SMS and Voice) - SMS Inbound - Enterprise - template Sep 2026.csv",
+      "VOICE": "MOBILE_SMS_VOICE/USD - Mobile (SMS and Voice) - Voice - 2-Way - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "TOLL_FREE_VOICE",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "TOLL_FREE_VOICE/USD - Toll-Free Voice - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "WHATSAPP",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "WHATSAPP/USD - WhatsApp - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "VIBER",
+      "pricing_type": "Enterprise",
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "VIBER/USD - Viber - Enterprise - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "PHONE_ID_SUITE",
+      "pricing_type": null,
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": [
+        "PHONE_ID_STANDARD",
+        "PHONE_ID_CONTACT",
+        "PHONE_ID_CONTACT_MATCH",
+        "PHONE_ID_NUMBER_DEACTIVATION",
+        "PHONE_ID_PORTING_HISTORY",
+        "PHONE_ID_PORTING_STATUS",
+        "PHONE_ID_SIM_SWAP",
+        "PHONE_ID_SUBSCRIBER_STATUS",
+        "PHONE_ID_CFD",
+        "PHONE_ID_AGE_VERIFY",
+        "PHONE_ID_BREACHED_DATA",
+        "PHONE_ID_ACTIVE_CALL_STATUS"
+      ]
+    },
+    "files": {
+      "PHONE_ID_STANDARD": "PHONE_ID_SUITE/USD - Phone ID Standard - template Sep 2026.csv",
+      "PHONE_ID_CONTACT": "PHONE_ID_SUITE/USD - Phone ID Contact - template Sep 2026.csv",
+      "PHONE_ID_CONTACT_MATCH": "PHONE_ID_SUITE/USD - Phone ID Contact Match - template Sep 2026.csv",
+      "PHONE_ID_NUMBER_DEACTIVATION": "PHONE_ID_SUITE/USD - Phone ID Number Deactivation - template Sep 2026.csv",
+      "PHONE_ID_PORTING_HISTORY": "PHONE_ID_SUITE/USD - Phone ID Porting History - template Sep 2026.csv",
+      "PHONE_ID_PORTING_STATUS": "PHONE_ID_SUITE/USD - Phone ID Porting Status - template Sep 2026.csv",
+      "PHONE_ID_SIM_SWAP": "PHONE_ID_SUITE/USD - Phone ID SIM Swap - template Sep 2026.csv",
+      "PHONE_ID_SUBSCRIBER_STATUS": "PHONE_ID_SUITE/USD - Phone ID Subscriber Status - template Sep 2026.csv",
+      "PHONE_ID_CFD": "PHONE_ID_SUITE/USD - Phone ID CFD - template Sep 2026.csv",
+      "PHONE_ID_AGE_VERIFY": "PHONE_ID_SUITE/USD - Phone ID Age Verify - template Sep 2026.csv",
+      "PHONE_ID_BREACHED_DATA": "PHONE_ID_SUITE/USD - Phone ID Breached Data - template Sep 2026.csv",
+      "PHONE_ID_ACTIVE_CALL_STATUS": "PHONE_ID_SUITE/USD - Phone ID Active Call Status - template Sep 2026.csv"
+    }
+  },
+  {
+    "request": {
+      "currency": "USD",
+      "product_id": "PHONE_ID_LIVE_STATUS",
+      "pricing_type": null,
+      "sender_ids": {},
+      "local_countries": [],
+      "product_options": {},
+      "selected_subproducts": []
+    },
+    "files": {
+      "output": "PHONE_ID_LIVE_STATUS/USD - Phone ID Live Status - template Sep 2026.csv"
+    }
+  }
+]

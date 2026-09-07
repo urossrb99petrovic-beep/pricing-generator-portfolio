@@ -1,0 +1,10 @@
+Band1,Band2,Band3,Band4,Band5,Band6
+0,,,,,
+Country,ISO2,Band1:LandlineGeneric,Band2:LandlineGeneric,Band3:LandlineGeneric,Band4:LandlineGeneric,Band5:LandlineGeneric,Band6:LandlineGeneric,Band1:MobileGeneric,Band2:MobileGeneric,Band3:MobileGeneric,Band4:MobileGeneric,Band5:MobileGeneric,Band6:MobileGeneric,Band1:LandlineInboundVoice,Band2:LandlineInboundVoice,Band3:LandlineInboundVoice,Band4:LandlineInboundVoice,Band5:LandlineInboundVoice,Band6:LandlineInboundVoice,Band1:MobileInboundVoice,Band2:MobileInboundVoice,Band3:MobileInboundVoice,Band4:MobileInboundVoice,Band5:MobileInboundVoice,Band6:MobileInboundVoice,Band1:LandlineOutboundVoice,Band2:LandlineOutboundVoice,Band3:LandlineOutboundVoice,Band4:LandlineOutboundVoice,Band5:LandlineOutboundVoice,Band6:LandlineOutboundVoice,Band1:MobileOutboundVoice,Band2:MobileOutboundVoice,Band3:MobileOutboundVoice,Band4:MobileOutboundVoice,Band5:MobileOutboundVoice,Band6:MobileOutboundVoice
+,,0.112,,,,,,0.11,,,,,,0.114,,,,,,0.114,,,,,,0.112,,,,,,0.11,,,,,
+United States,US,0.12,,,,,,0.118,,,,,,0.122,,,,,,0.122,,,,,,0.12,,,,,,0.118,,,,,
+Canada,CA,0.128,,,,,,0.126,,,,,,0.13,,,,,,0.13,,,,,,0.128,,,,,,0.126,,,,,
+United Kingdom,GB,0.136,,,,,,0.134,,,,,,0.138,,,,,,0.138,,,,,,0.136,,,,,,0.134,,,,,
+Germany,DE,0.144,,,,,,0.142,,,,,,0.146,,,,,,0.146,,,,,,0.144,,,,,,0.142,,,,,
+Brazil,BR,0.152,,,,,,0.15,,,,,,0.154,,,,,,0.154,,,,,,0.152,,,,,,0.15,,,,,
+Serbia,RS,0.16,,,,,,0.158,,,,,,0.114,,,,,,0.114,,,,,,0.16,,,,,,0.158,,,,,

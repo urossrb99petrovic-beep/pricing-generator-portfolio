@@ -63,6 +63,8 @@ class MainWindow(ctk.CTk):
         self._selected_pricing_type: str | None = None
         self._selected_sender_ids: dict[str, str] = {}
         self._selected_local_countries: list[str] = []
+        self._selected_product_options: dict[str, str] = {}
+        self._selected_subproducts: list[str] = []
         self._local_country_cache: dict[
             str,
             list[str]
@@ -216,6 +218,12 @@ class MainWindow(ctk.CTk):
             ),
             selected_local_countries=(
                 self._selected_local_countries
+            ),
+            selected_product_options=(
+                self._selected_product_options
+            ),
+            selected_subproducts=(
+                self._selected_subproducts
             )
         )
 
@@ -248,22 +256,40 @@ class MainWindow(ctk.CTk):
             self._selected_pricing_type = None
             self._selected_sender_ids = {}
             self._selected_local_countries = []
+            self._selected_product_options = {}
 
         self.show_options()
 
     def _handle_generate(
         self,
-        pricing_type: str,
+        pricing_type: str | None,
         sender_ids: dict[str, str],
-        local_countries: list[str]
+        local_countries: list[str],
+        product_options: dict[str, str],
+        selected_subproducts: list[str]
     ) -> None:
         """
         Generates pricing using the current GUI selections.
+
+        Supports:
+            - normal single-file products;
+            - Mobile multi-file generation;
+            - products with or without Pricing Type;
+            - products with selectable subproducts.
         """
 
         self._selected_pricing_type = pricing_type
         self._selected_sender_ids = sender_ids
         self._selected_local_countries = local_countries
+        self._selected_product_options = product_options
+
+        self._selected_subproducts = (
+            selected_subproducts
+        )
+
+        # ==================================================
+        # VALIDATE CURRENT GUI SELECTIONS
+        # ==================================================
 
         if self._selected_currency is None:
             messagebox.showerror(
@@ -287,17 +313,35 @@ class MainWindow(ctk.CTk):
             )
             return
 
+        # ==================================================
+        # BUILD GENERATION REQUEST
+        # ==================================================
+
         request = GenerationRequest(
             currency=self._selected_currency,
             product_id=self._selected_product[
                 "product_id"
             ],
-            pricing_type=self._selected_pricing_type,
-            sender_ids=self._selected_sender_ids.copy(),
+            pricing_type=(
+                self._selected_pricing_type
+            ),
+            sender_ids=(
+                self._selected_sender_ids.copy()
+            ),
             local_countries=(
                 self._selected_local_countries.copy()
+            ),
+            product_options=(
+                self._selected_product_options.copy()
+            ),
+            selected_subproducts=(
+                self._selected_subproducts.copy()
             )
         )
+
+        # ==================================================
+        # GENERATION START
+        # ==================================================
 
         if self._options_frame is not None:
             self._options_frame.set_generation_in_progress(
@@ -311,7 +355,7 @@ class MainWindow(ctk.CTk):
         self.update_idletasks()
 
         try:
-            result, output_path = (
+            result, output = (
                 self._controller.generate_pricing(
                     request
                 )
@@ -325,6 +369,7 @@ class MainWindow(ctk.CTk):
             ValueError,
             RuntimeError
         ) as error:
+
             messagebox.showerror(
                 title="Generation Error",
                 message=(
@@ -333,6 +378,7 @@ class MainWindow(ctk.CTk):
                 ),
                 parent=self
             )
+
             return
 
         finally:
@@ -347,34 +393,123 @@ class MainWindow(ctk.CTk):
 
             self.update_idletasks()
 
-        messagebox.showinfo(
-            title="Generation Successful",
-            message=(
-                "Pricing was generated successfully.\n\n"
-                f"Product: {result.product_output_name}\n"
-                f"Currency: {result.currency}\n"
-                f"Pricing Type: {result.pricing_type}\n"
-                f"Rows Generated: {len(result.rows)}\n\n"
-                f"Output File:\n"
-                f"{output_path.name}\n\n"
-                f"Location:\n"
-                f"{output_path.parent}"
-            ),
-            parent=self
-        )
+        # ==================================================
+        # OPTIONAL PRICING TYPE TEXT
+        # ==================================================
 
-        if (
-            self._application_config.settings[
-                "behaviour"
-            ][
-                "open_output_folder_after_generation"
-            ]
-        ):
-            FileOpener.reveal_file(
-                output_path
+        pricing_type_text = ""
+
+        if result.pricing_type:
+            pricing_type_text = (
+                f"Pricing Type: "
+                f"{result.pricing_type}\n"
             )
 
-        self.destroy()
+        # ==================================================
+        # MULTI-FILE OUTPUT
+        # ==================================================
+
+        if isinstance(
+            output,
+            dict
+        ):
+            output_paths = output
+
+            generated_files_text = "\n".join(
+                f"• {output_path.name}"
+                for output_path in (
+                    output_paths.values()
+                )
+            )
+
+            row_counts = (
+                result.output_row_counts
+            )
+
+            row_counts_text = "\n".join(
+                (
+                    f"• {output_id}: "
+                    f"{row_count} rows"
+                )
+                for output_id, row_count
+                in row_counts.items()
+            )
+
+            first_output_path = next(
+                iter(
+                    output_paths.values()
+                )
+            )
+
+            messagebox.showinfo(
+                title="Generation Successful",
+                message=(
+                    "Pricing was generated successfully.\n\n"
+                    f"Product: "
+                    f"{result.product_output_name}\n"
+                    f"Currency: "
+                    f"{result.currency}\n"
+                    f"{pricing_type_text}"
+                    f"\n"
+                    f"Generated Files:\n"
+                    f"{generated_files_text}\n\n"
+                    f"Rows Generated:\n"
+                    f"{row_counts_text}\n\n"
+                    f"Location:\n"
+                    f"{first_output_path.parent}"
+                ),
+                parent=self
+            )
+
+            if (
+                self._application_config.settings[
+                    "behaviour"
+                ][
+                    "open_output_folder_after_generation"
+                ]
+            ):
+                FileOpener.reveal_file(
+                    first_output_path
+                )
+
+        # ==================================================
+        # NORMAL SINGLE-FILE OUTPUT
+        # ==================================================
+
+        else:
+            output_path = output
+
+            messagebox.showinfo(
+                title="Generation Successful",
+                message=(
+                    "Pricing was generated successfully.\n\n"
+                    f"Product: "
+                    f"{result.product_output_name}\n"
+                    f"Currency: "
+                    f"{result.currency}\n"
+                    f"{pricing_type_text}"
+                    f"Rows Generated: "
+                    f"{len(result.rows)}\n\n"
+                    f"Output File:\n"
+                    f"{output_path.name}\n\n"
+                    f"Location:\n"
+                    f"{output_path.parent}"
+                ),
+                parent=self
+            )
+
+            if (
+                self._application_config.settings[
+                    "behaviour"
+                ][
+                    "open_output_folder_after_generation"
+                ]
+            ):
+                FileOpener.reveal_file(
+                    output_path
+                )
+
+        self._reset_after_successful_generation()
 
     def _build_product_mapping(
         self
@@ -493,6 +628,47 @@ class MainWindow(ctk.CTk):
                 f"{vertical_position}"
             )
         )
+
+    def _reset_after_successful_generation(
+        self
+    ) -> None:
+        """
+        Clears all user selections after successful generation
+        and returns the application to a clean Home page.
+
+        Cached workbook-derived data is deliberately retained
+        because it is not a user selection.
+        """
+
+        # ==================================================
+        # STEP 1 SELECTIONS
+        # ==================================================
+
+        self._selected_currency = None
+        self._selected_product_name = None
+        self._selected_product = None
+
+        # ==================================================
+        # STEP 2 SELECTIONS
+        # ==================================================
+
+        self._selected_pricing_type = None
+        self._selected_sender_ids = {}
+        self._selected_local_countries = []
+        self._selected_product_options = {}
+        self._selected_subproducts = []
+
+        # ==================================================
+        # OPTIONS PAGE REFERENCE
+        # ==================================================
+
+        self._options_frame = None
+
+        # ==================================================
+        # RETURN TO CLEAN HOME PAGE
+        # ==================================================
+
+        self.show_home()
 
     def _load_available_local_countries(
         self
