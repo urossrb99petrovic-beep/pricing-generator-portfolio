@@ -96,4 +96,4 @@ GitHub Actions is configured for Windows and Linux on Python 3.11 and 3.12. Loca
 | `demo.py` | Complete headless scenario runner |
 | `docs/` | Walkthrough, architecture and portfolio adaptation notes |
 
-Author: [Uroš Petrović](https://github.com/urosrb99petrovic-beep). License: [MIT](LICENSE).
+Author: [Uroš Petrović](https://github.com/urossrb99petrovic-beep). License: [MIT](LICENSE).
